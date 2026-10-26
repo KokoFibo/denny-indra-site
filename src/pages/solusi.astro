@@ -1,0 +1,718 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { SITE } from '../config';
+---
+<Layout route="solusi" title={'Solusi Proteksi & Investasi | Denny Indra'} description={'Katalog solusi proteksi kesehatan, penyakit kritis, pendidikan, dan warisan beserta kalkulator kebutuhan proteksi.'}>
+<div class="flex flex-col w-full">
+<!-- Top Editorial Header & Ambient Title -->
+<section class="relative w-full overflow-hidden pb-12 pt-8 lg:pb-16 lg:pt-12">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-10 border-b border-outline-variant/30">
+<div class="max-w-3xl">
+<div class="flex items-center gap-3 mb-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+              Portofolio Resmi Prudential Indonesia
+            </span>
+<span class="font-label-sm text-label-sm text-secondary font-medium tracking-wide uppercase">
+              Kurasi Advisor Denny Indra, CFP®
+            </span>
+</div>
+<h1 class="font-display text-display text-on-surface tracking-tight leading-[1.08] mb-6">
+            Katalog Portofolio Solusi Proteksi &amp; Perencanaan Warisan
+          </h1>
+<p class="font-body-lg text-body-lg text-secondary leading-relaxed max-w-2xl">
+            Arsitektur finansial presisi tinggi untuk memitigasi risiko medis katastropik, melestarikan likuiditas keluarga, serta memastikan transfer aset generasi berikutnya berlangsung mulus tanpa sengketa hukum maupun beban pajak waris.
+          </p>
+</div>
+<!-- Metric Highlight Badge Bento -->
+<div class="flex sm:flex-row lg:flex-col gap-4 shrink-0">
+<div class="p-5 rounded-xl bg-surface-container-lowest shadow-xs flex items-center gap-4 min-w-[240px]">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">shield_with_heart</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">Rp 65 Miliar</div>
+<div class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Maksimum Limit Tahunan Medis</div>
+</div>
+</div>
+<div class="p-5 rounded-xl bg-surface-container-lowest shadow-xs flex items-center gap-4 min-w-[240px]">
+<div class="w-12 h-12 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">100% Cashless</div>
+<div class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Akses RS Global Terpilih</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Interactive Category Filter Navigation -->
+<div class="pt-8">
+<div class="flex items-center justify-between gap-4 flex-wrap">
+<div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none" id="productFilterButtons">
+<button class="filter-tab px-5 py-2.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md shadow-xs transition-all flex items-center gap-2" data-filter="all">
+<span class="material-symbols-outlined text-[16px]">grid_view</span>
+              Semua Solusi Proteksi (4)
+            </button>
+<button class="filter-tab px-5 py-2.5 rounded-lg bg-surface-container text-secondary hover:text-on-surface font-label-md text-label-md transition-all flex items-center gap-2" data-filter="health">
+<span class="material-symbols-outlined text-[16px]">local_hospital</span>
+              Kesehatan Eksekutif
+            </button>
+<button class="filter-tab px-5 py-2.5 rounded-lg bg-surface-container text-secondary hover:text-on-surface font-label-md text-label-md transition-all flex items-center gap-2" data-filter="critical">
+<span class="material-symbols-outlined text-[16px]">cardiology</span>
+              Penyakit Kritis Komprehensif
+            </button>
+<button class="filter-tab px-5 py-2.5 rounded-lg bg-surface-container text-secondary hover:text-on-surface font-label-md text-label-md transition-all flex items-center gap-2" data-filter="legacy">
+<span class="material-symbols-outlined text-[16px]">account_balance</span>
+              Warisan &amp; Estate Planning
+            </button>
+<button class="filter-tab px-5 py-2.5 rounded-lg bg-surface-container text-secondary hover:text-on-surface font-label-md text-label-md transition-all flex items-center gap-2" data-filter="education">
+<span class="material-symbols-outlined text-[16px]">school</span>
+              Dana Pendidikan Terpadu
+            </button>
+</div>
+<div class="hidden xl:flex items-center gap-2 text-secondary font-label-sm text-label-sm">
+<span class="inline-block w-2 h-2 rounded-full bg-primary animate-ping"></span>
+            Klaim 24/7 Terintegrasi • Asistensi Pribadi Denny Indra
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Deep Dive Product Showcase Cards Grid -->
+<section class="w-full pb-20">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="productCardContainer">
+<!-- PRODUCT 1: PRUPrime Healthcare Plus Pro -->
+<article class="product-card group rounded-2xl bg-surface-container-lowest p-8 lg:p-10 shadow-md hover:shadow-xl transition-all duration-300 relative flex flex-col justify-between overflow-hidden" data-category="health">
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-primary-container"></div>
+<div>
+<div class="flex items-start justify-between gap-4 mb-6">
+<div>
+<span class="px-3 py-1 rounded-sm bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase font-semibold">
+                  Executive Medical Cover
+                </span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface font-bold mt-2 tracking-tight">
+                  PRUPrime Healthcare Plus Pro
+                </h3>
+<p class="font-label-md text-label-md text-primary font-medium mt-1">
+                  Solusi Rawat Inap &amp; Tindakan Medis Tanpa Kompromi
+                </p>
+</div>
+<div class="w-14 h-14 rounded-xl bg-surface-container-low flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-3xl">medical_services</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-secondary mb-6 leading-relaxed">
+              Didesain khusus untuk nasabah prioritas yang menginginkan kenyamanan privasi absolut, proteksi biaya bedah berteknologi canggih (robotic surgery), serta jangkauan cashless hingga rumah sakit prestisius di Singapura, Malaysia, dan seluruh dunia.
+            </p>
+<!-- Product Feature Highlights -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+<div class="p-3.5 rounded-lg bg-surface-container-low flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Limit Hingga Rp 65 Miliar/Thn</div>
+<div class="font-body-sm text-body-sm text-secondary">Termasuk PRUPrime Limit Booster tahunan</div>
+</div>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-low flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">One Bed One Room (1 Kamar 1 Pasien)</div>
+<div class="font-body-sm text-body-sm text-secondary">Kamar mandi dalam dengan kenyamanan maksimal</div>
+</div>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-low flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Cakupan Cashless Seluruh Dunia</div>
+<div class="font-body-sm text-body-sm text-secondary">Pilihan plan Asia Pasifik hingga Global (excl/incl USA)</div>
+</div>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-low flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Pasca Rawat Inap Hingga 90 Hari</div>
+<div class="font-body-sm text-body-sm text-secondary">Cover pengobatan kanker modern, cuci darah, &amp; fisioterapi</div>
+</div>
+</div>
+</div>
+<!-- Visual Context Box -->
+<div class="relative w-full h-44 rounded-xl overflow-hidden mb-6">
+<img class="w-full h-full object-cover" data-alt="Modern ultra-clean private hospital suite in Singapore with high-end interior, floor-to-ceiling city window view, premium medical bed, and ambient soft lighting conveying elite health care and comfort." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADjQ3LsOr1e_oXC9SMGS7vtrZE2rBfk3emR_KdJ0QN8NGyFHiFPFbwFE0MO4wWSS-3zP7v1xCNfndcauJyMJ1PN7BpGLXiZkQAvXA5loOLJJrzdVC-U0DB5tuG2M6uvTiMKwpzoEmILHnyy9uvxZps9-m6VS_ZzyksA68OZE88A8_JWJjMtfQZ4zFVv4Nt0LMFOQx6O0E2FnTeJ39oETIt-NDslQMtmperPTIVz1hr"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/85 via-inverse-surface/30 to-transparent flex items-end p-4">
+<div class="text-inverse-on-surface">
+<span class="font-label-sm text-label-sm text-on-tertiary-container uppercase tracking-wider block">Fasilitas Eksekutif</span>
+<span class="font-headline-sm text-headline-sm font-semibold">Privasi Kamar Tertinggi • Pasien &amp; Pendamping Nyaman</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between gap-4 pt-4 border-t border-outline-variant/30">
+<div>
+<span class="font-label-sm text-label-sm text-secondary block">Usia Masuk Polis:</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">30 Hari - 70 Tahun (Cover s.d 99 Thn)</span>
+</div>
+<a class="px-5 py-2.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md transition-colors flex items-center gap-1.5 shadow-xs" href="/konsultasi">
+              Minta Ilustrasi
+              <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- PRODUCT 2: PRUCritical Benefit Network -->
+<article class="product-card group rounded-2xl bg-surface-container-lowest p-8 lg:p-10 shadow-md hover:shadow-xl transition-all duration-300 relative flex flex-col justify-between overflow-hidden" data-category="critical">
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-primary"></div>
+<div>
+<div class="flex items-start justify-between gap-4 mb-6">
+<div>
+<span class="px-3 py-1 rounded-sm bg-surface-container-high text-on-surface font-label-sm text-label-sm uppercase font-semibold">
+                  Critical Illness Protection
+                </span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface font-bold mt-2 tracking-tight">
+                  PRUCritical Benefit Network
+                </h3>
+<p class="font-label-md text-label-md text-primary font-medium mt-1">
+                  Proteksi Pengganti Penghasilan Multi-Tahap
+                </p>
+</div>
+<div class="w-14 h-14 rounded-xl bg-surface-container-low flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-3xl">ecg_heart</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-secondary mb-6 leading-relaxed">
+              Bukan sekadar mengganti kuitansi rumah sakit, melainkan menyuntikkan likuiditas dana tunai (lump-sum) seketika saat terdiagnosa penyakit kritis, guna menjaga standar hidup keluarga, cicilan bisnis, dan pemulihan tanpa beban finansial.
+            </p>
+<!-- Product Feature Highlights -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+<div class="p-3.5 rounded-lg bg-surface-container-low flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">60+ Kondisi Kritis Terlindungi</div>
+<div class="font-body-sm text-body-sm text-secondary">Cakupan komprehensif dari stadium awal (early) hingga akhir</div>
+</div>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-low flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Santunan Tunai Sekaligus (Lump-Sum)</div>
+<div class="font-body-sm text-body-sm text-secondary">Bebas digunakan untuk biaya hidup, alternatif medis, atau tabungan</div>
+</div>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-low flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Pengembalian Premi Jika Sehat</div>
+<div class="font-body-sm text-body-sm text-secondary">Opsi proteksi tanpa rasa rugi hingga akhir masa pertanggungan</div>
+</div>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-low flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Fitur Pembebasan Premi Otomatis</div>
+<div class="font-body-sm text-body-sm text-secondary">Premi diteruskan oleh Prudential jika terkena diagnosa tahap lanjut</div>
+</div>
+</div>
+</div>
+<!-- Visual Context Box -->
+<div class="relative w-full h-44 rounded-xl overflow-hidden mb-6">
+<img class="w-full h-full object-cover" data-alt="An Indonesian middle-aged business executive smiling in calm relief in a sunlit architectural living room with his daughter, signifying financial relief and steady peace of mind after illness recovery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1WXerYjVYG14RbCPJHklj4y_si6u7QSkw6U7ZKh6SNeX2aMcdBTY4bflXcDLj9OqBdyJ2ZN-wpas5aAvnd2KJIKPsTZHGr0TQXEjvjsAh22YvzmefAz_N0KBCKffOTb72hyAjuQvlmjXUt-0PUWnDfSJl2eNPfRaalYWANO57JZSYxM3ZE28a1m-qCvwIDLI3Bx30rw1AQfElGt0JXAgd6KBkX5jaU6mfV1mEbOEW"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/85 via-inverse-surface/30 to-transparent flex items-end p-4">
+<div class="text-inverse-on-surface">
+<span class="font-label-sm text-label-sm text-on-tertiary-container uppercase tracking-wider block">Income Replacement</span>
+<span class="font-headline-sm text-headline-sm font-semibold">Cash Flow Bisnis &amp; Rumah Tangga Tetap Mengalir Utuh</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between gap-4 pt-4 border-t border-outline-variant/30">
+<div>
+<span class="font-label-sm text-label-sm text-secondary block">Masa Pertanggungan:</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Fleksibel hingga usia 70, 85, atau 99 Tahun</span>
+</div>
+<a class="px-5 py-2.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md transition-colors flex items-center gap-1.5 shadow-xs" href="/konsultasi">
+              Minta Ilustrasi
+              <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- PRODUCT 3: PRUWarisan & Legacy Estate -->
+<article class="product-card group rounded-2xl bg-surface-container-lowest p-8 lg:p-10 shadow-md hover:shadow-xl transition-all duration-300 relative flex flex-col justify-between overflow-hidden" data-category="legacy">
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-tertiary-container"></div>
+<div>
+<div class="flex items-start justify-between gap-4 mb-6">
+<div>
+<span class="px-3 py-1 rounded-sm bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm uppercase font-semibold">
+                  Wealth Preservation • Ultra HNW
+                </span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface font-bold mt-2 tracking-tight">
+                  PRUWarisan &amp; Legacy Estate
+                </h3>
+<p class="font-label-md text-label-md text-tertiary-container font-medium mt-1">
+                  Kepastian Transfer Aset Multi-Generasi Bebas Sengketa
+                </p>
+</div>
+<div class="w-14 h-14 rounded-xl bg-surface-container-low flex items-center justify-center text-tertiary-container shrink-0">
+<span class="material-symbols-outlined text-3xl">account_balance</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-secondary mb-6 leading-relaxed">
+              Instrumen distribusi kekayaan yang dirancang untuk memotong birokrasi pembagian waris konvensional. Dana cair langsung ke penerima manfaat yang ditunjuk tanpa proses peradilan fatwa waris yang melelahkan dan bebas dari potongan pajak warisan.
+            </p>
+<!-- Product Feature Highlights -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+<div class="p-3.5 rounded-lg bg-surface-container-low flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary-container text-[20px] shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Bebas Pajak &amp; Tanpa Sengketa Hukum</div>
+<div class="font-body-sm text-body-sm text-secondary">Cair langsung ke ahli waris dalam bentuk tunai cair seketika</div>
+</div>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-low flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary-container text-[20px] shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Pilihan Masa Bayar Fleksibel</div>
+<div class="font-body-sm text-body-sm text-secondary">Bayar ringkas selama 5, 10, atau 15 tahun saja</div>
+</div>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-low flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary-container text-[20px] shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Perlindungan Jiwa s.d Usia 99 Tahun</div>
+<div class="font-body-sm text-body-sm text-secondary">Kepastian warisan pasti keluar tanpa risiko fluktuasi pasar saham</div>
+</div>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-low flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary-container text-[20px] shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Manfaat Ekstra PRUWarisan Booster</div>
+<div class="font-body-sm text-body-sm text-secondary">Tambahan persentase uang pertanggungan seiring bertambahnya usia</div>
+</div>
+</div>
+</div>
+<!-- Visual Context Box -->
+<div class="relative w-full h-44 rounded-xl overflow-hidden mb-6">
+<img class="w-full h-full object-cover" data-alt="An Indonesian grandfather and family gathering in an elegant private library study, signing legacy wealth documents with warm, luxurious golden lighting and serene intergenerational bond." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXSkucsWgTi3vyIFST8-19XnO0FeuNfuBJjbABmkY6moowJk63eB_P0aeFwALy1-KVohC7HLJAmdxE5MwGZmQ6BwbgjvPfXz6-Purw-Tt5tAiu0ZVsThz4_oHFcf4gyIw8vCcCBuCnPhrXOZ1q61-ICCqUF9PlPRqwSoaPMRSFs_DoH_rWGwx5cwUrJE6Si027mZWLT3U30HHX4XZl1XgD0m-JVDX3AFYhw3pQZly_"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/85 via-inverse-surface/30 to-transparent flex items-end p-4">
+<div class="text-inverse-on-surface">
+<span class="font-label-sm text-label-sm text-on-tertiary-container uppercase tracking-wider block">Estate Succession</span>
+<span class="font-headline-sm text-headline-sm font-semibold">Mencegah Aset Terkunci • Warisan Tunai Siap Pakai</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between gap-4 pt-4 border-t border-outline-variant/30">
+<div>
+<span class="font-label-sm text-label-sm text-secondary block">Mata Uang Tersedia:</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">IDR (Rupiah) &amp; USD (US Dollar)</span>
+</div>
+<a class="px-5 py-2.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md transition-colors flex items-center gap-1.5 shadow-xs" href="/konsultasi">
+              Minta Ilustrasi
+              <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- PRODUCT 4: PRUSolusi Edukasi Mandiri -->
+<article class="product-card group rounded-2xl bg-surface-container-lowest p-8 lg:p-10 shadow-md hover:shadow-xl transition-all duration-300 relative flex flex-col justify-between overflow-hidden" data-category="education">
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-secondary"></div>
+<div>
+<div class="flex items-start justify-between gap-4 mb-6">
+<div>
+<span class="px-3 py-1 rounded-sm bg-secondary-container text-on-secondary-container font-label-sm text-label-sm uppercase font-semibold">
+                  Future Generation Fund
+                </span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface font-bold mt-2 tracking-tight">
+                  PRUSolusi Edukasi Mandiri
+                </h3>
+<p class="font-label-md text-label-md text-primary font-medium mt-1">
+                  Jaminan Dana Kuliah Putra-Putri Tercinta Tanpa Risiko Terputus
+                </p>
+</div>
+<div class="w-14 h-14 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-3xl">school</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-secondary mb-6 leading-relaxed">
+              Struktur proteksi khusus yang menjamin masa depan pendidikan tinggi anak tetap aman dan terjadwal secara disiplin, meskipun pencari nafkah utama dipanggil Tuhan lebih cepat atau mengalami cacat tetap total akibat sakit maupun kecelakaan.
+            </p>
+<!-- Product Feature Highlights -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+<div class="p-3.5 rounded-lg bg-surface-container-low flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Pencairan Dana Bertahap Pasti</div>
+<div class="font-body-sm text-body-sm text-secondary">Tepat saat anak masuk SMA, Universitas, dan Wisuda Sarjana</div>
+</div>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-low flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Waiver of Premium Terintegrasi</div>
+<div class="font-body-sm text-body-sm text-secondary">Jika orang tua wafat, polis bebas setor dan dana tunjangan terus disalurkan</div>
+</div>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-low flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Tunjangan Bulanan Living Cost</div>
+<div class="font-body-sm text-body-sm text-secondary">Uang saku bulanan bagi anak jika pencari nafkah tutup usia</div>
+</div>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-low flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Ringankan Inflasi Biaya Kuliah</div>
+<div class="font-body-sm text-body-sm text-secondary">Alokasi portofolio terukur demi mengantisipasi inflasi pendidikan 10-15%/thn</div>
+</div>
+</div>
+</div>
+<!-- Visual Context Box -->
+<div class="relative w-full h-44 rounded-xl overflow-hidden mb-6">
+<img class="w-full h-full object-cover" data-alt="An Indonesian young female college graduate wearing a graduation gown holding her degree certificate proudly with her mother hugging her in the campus garden on a bright proud sunny day." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWhOqq4tnNqkr-hNk3Qg3YbSgiAX6P9sQ32AUSNMzG-PlSBi0LnwWy1EjLwQDCQ4xCvJF1fIUac3smcrn1_pNk4CXl9_8xddoZ-TpIP7hPRwL7YK9jGBEnBeUq3bLIWmvB4pwO4YB38AjXQ_uQNC5NlfVskBIKh3IQc3O4_HhEydVgEAETiUilcfl-RDCURPX2MgHojRRDaNLotDRodgLsRwjKCRpzTCatIk4YjDRc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/85 via-inverse-surface/30 to-transparent flex items-end p-4">
+<div class="text-inverse-on-surface">
+<span class="font-label-sm text-label-sm text-on-tertiary-container uppercase tracking-wider block">Education Certainty</span>
+<span class="font-headline-sm text-headline-sm font-semibold">Cita-Cita Anak Terus Berjalan Apapun Yang Terjadi</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between gap-4 pt-4 border-t border-outline-variant/30">
+<div>
+<span class="font-label-sm text-label-sm text-secondary block">Usia Anak Masuk:</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Mulai usia 1 hari s.d 12 Tahun</span>
+</div>
+<a class="px-5 py-2.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md transition-colors flex items-center gap-1.5 shadow-xs" href="/konsultasi">
+              Minta Ilustrasi
+              <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- Comprehensive Feature Comparison Table -->
+<section class="w-full py-16 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="mb-10 text-center max-w-3xl mx-auto">
+<span class="px-3.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase font-semibold">
+          Analisis Komparatif
+        </span>
+<h2 class="font-display text-headline-lg text-on-surface font-bold mt-3">
+          Tabel Matriks Fitur &amp; Karakteristik Polis
+        </h2>
+<p class="font-body-md text-body-md text-secondary mt-2">
+          Perbandingan objektif untuk membantu Anda menentukan alokasi premi yang paling tepat sasaran sesuai kebutuhan proteksi keluarga saat ini.
+        </p>
+</div>
+<div class="w-full overflow-x-auto rounded-2xl bg-surface-container-lowest shadow-md">
+<table class="w-full text-left border-collapse min-w-[800px]">
+<thead>
+<tr class="bg-surface-container text-on-surface">
+<th class="p-5 font-label-lg text-label-lg w-1/4">Parameter Produk</th>
+<th class="p-5 font-label-lg text-label-lg w-1/4 text-primary font-bold">PRUPrime Healthcare Plus Pro</th>
+<th class="p-5 font-label-lg text-label-lg w-1/4">PRUCritical Benefit</th>
+<th class="p-5 font-label-lg text-label-lg w-1/4">PRUWarisan Estate</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20 font-body-sm text-body-sm">
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="p-5 font-semibold text-on-surface">Fokus Utama Manfaat</td>
+<td class="p-5 text-on-surface font-medium">Tagihan Rumah Sakit &amp; Bedah Sesuai Tagihan (As-Charged)</td>
+<td class="p-5 text-secondary">Santunan Tunai Sekaligus saat Diagnosa Kritis</td>
+<td class="p-5 text-secondary">Uang Pertanggungan Jiwa Warisan Pasti Cair</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="p-5 font-semibold text-on-surface">Mekanisme Pembayaran</td>
+<td class="p-5 text-on-surface font-medium">Cashless via Kartu Hitam / Garansi RS</td>
+<td class="p-5 text-secondary">Transfer Rekening Pribadi Nasabah</td>
+<td class="p-5 text-secondary">Transfer Tunai ke Rekening Ahli Waris</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="p-5 font-semibold text-on-surface">Maksimal Nilai Proteksi</td>
+<td class="p-5 text-primary font-bold text-base">Hingga Rp 65 Miliar / Tahun</td>
+<td class="p-5 text-on-surface font-semibold">Sesuai Kebutuhan Income (Rp 1 M - Rp 20 M+)</td>
+<td class="p-5 text-on-surface font-semibold">Sesuai Nilai Estate (Rp 2 M - Rp 100 M+)</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="p-5 font-semibold text-on-surface">Wilayah Pertanggungan</td>
+<td class="p-5 text-on-surface font-medium">Indonesia, Asia, s.d Seluruh Dunia</td>
+<td class="p-5 text-secondary">Seluruh Dunia (Diagnosa Dokter Spesialis)</td>
+<td class="p-5 text-secondary">Global (Proteksi Jiwa Internasional)</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="p-5 font-semibold text-on-surface">Pilihan Masa Pembayaran</td>
+<td class="p-5 text-secondary">Tahunan berkala selama polis aktif</td>
+<td class="p-5 text-secondary">10, 15, atau 20 tahun</td>
+<td class="p-5 text-tertiary font-bold">Pilihan Cepat: 5, 10, atau 15 Tahun</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="p-5 font-semibold text-on-surface">Imbal Hasil / Nilai Tunai</td>
+<td class="p-5 text-secondary">Proteksi Murni Tradisional</td>
+<td class="p-5 text-secondary">Opsi Pengembalian Premi 100%</td>
+<td class="p-5 text-secondary">Nilai Tunai Dijamin Terbentuk</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="p-5 font-semibold text-on-surface">Kesesuaian Profil</td>
+<td class="p-5 text-secondary">Wajib dimiliki setiap individu &amp; eksekutif</td>
+<td class="p-5 text-secondary">Pencari nafkah utama, pemilik bisnis</td>
+<td class="p-5 text-secondary">Kepala keluarga mapan, investor, lansia aktif</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Advisory Framework: Life Stages Guide -->
+<section class="w-full py-20">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+<div>
+<span class="px-3 py-1 rounded-sm bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase font-semibold">
+            Framework Perencanaan
+          </span>
+<h2 class="font-display text-headline-lg text-on-surface font-bold mt-2">
+            Panduan Memilih Polis Sesuai Fase Kehidupan
+          </h2>
+</div>
+<p class="font-body-md text-body-md text-secondary max-w-md">
+          Kebutuhan finansial berevolusi. Berikut rekomendasi prioritas portofolio dari Advisor Denny Indra untuk memastikan premi bekerja optimal tanpa tumpang tindih.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Stage 1 -->
+<div class="p-6 rounded-2xl bg-surface-container-lowest shadow-xs hover:shadow-md transition-shadow relative">
+<div class="text-primary font-display text-headline-lg font-bold opacity-30 mb-2">01</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold mb-2">Single &amp; Early Career</div>
+<p class="font-body-sm text-body-sm text-secondary mb-4 leading-relaxed">
+            Fokus pada proteksi arus kas mandiri agar tidak membebani tabungan orang tua jika terjadi risiko rawat inap.
+          </p>
+<div class="p-3 rounded-lg bg-surface-container-low mb-4">
+<span class="font-label-sm text-label-sm text-primary font-semibold block uppercase">Prioritas Utama:</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">PRUPrime Healthcare (Plan Silver/Gold)</span>
+</div>
+<ul class="text-secondary font-body-sm text-body-sm space-y-1.5">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">done</span>
+              Premi sangat terjangkau di usia muda
+            </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">done</span>
+              Menjaga portofolio investasi awal
+            </li>
+</ul>
+</div>
+<!-- Stage 2 -->
+<div class="p-6 rounded-2xl bg-surface-container-lowest shadow-xs hover:shadow-md transition-shadow relative">
+<div class="text-primary font-display text-headline-lg font-bold opacity-30 mb-2">02</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold mb-2">Keluarga Muda &amp; Balita</div>
+<p class="font-body-sm text-body-sm text-secondary mb-4 leading-relaxed">
+            Tanggung jawab ganda: perlindungan kesehatan anak serta garansi dana darurat jika pencari nafkah terkena risiko.
+          </p>
+<div class="p-3 rounded-lg bg-surface-container-low mb-4">
+<span class="font-label-sm text-label-sm text-primary font-semibold block uppercase">Prioritas Utama:</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">Kesehatan Anak + PRUCritical Benefit</span>
+</div>
+<ul class="text-secondary font-body-sm text-body-sm space-y-1.5">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">done</span>
+              Income replacement 5 tahun pengeluaran
+            </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">done</span>
+              Mulai cicilan PRUSolusi Edukasi
+            </li>
+</ul>
+</div>
+<!-- Stage 3 -->
+<div class="p-6 rounded-2xl bg-surface-container-lowest shadow-xs hover:shadow-md transition-shadow relative">
+<div class="text-primary font-display text-headline-lg font-bold opacity-30 mb-2">03</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold mb-2">Profesional Mapan / Business Owner</div>
+<p class="font-body-sm text-body-sm text-secondary mb-4 leading-relaxed">
+            Akumulasi kekayaan berada di puncak. Prioritas utama bergeser ke proteksi aset bisnis, key-person cover, dan penyiapan kuliah luar negeri.
+          </p>
+<div class="p-3 rounded-lg bg-surface-container-low mb-4">
+<span class="font-label-sm text-label-sm text-primary font-semibold block uppercase">Prioritas Utama:</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">PRUPrime Diamond/Platinum + PRUWarisan</span>
+</div>
+<ul class="text-secondary font-body-sm text-body-sm space-y-1.5">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">done</span>
+              Akses RS terbaik Singapura &amp; Malaysia
+            </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">done</span>
+              Pencairan dana kuliah anak di luar negeri
+            </li>
+</ul>
+</div>
+<!-- Stage 4 -->
+<div class="p-6 rounded-2xl bg-surface-container-lowest shadow-xs hover:shadow-md transition-shadow relative">
+<div class="text-tertiary-container font-display text-headline-lg font-bold opacity-30 mb-2">04</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold mb-2">Pre-Pensiun &amp; Wealth Transfer</div>
+<p class="font-body-sm text-body-sm text-secondary mb-4 leading-relaxed">
+            Fase distribusi aset keluarga. Memastikan kekayaan cair seketika tanpa sengketa waris, sengketa bisnis, atau beban pajak.
+          </p>
+<div class="p-3 rounded-lg bg-surface-container-low mb-4">
+<span class="font-label-sm text-label-sm text-tertiary font-semibold block uppercase">Prioritas Utama:</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">PRUWarisan Multi-Generation Trust</span>
+</div>
+<ul class="text-secondary font-body-sm text-body-sm space-y-1.5">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">done</span>
+              Bypass fatwa waris &amp; sengketa notaris
+            </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">done</span>
+              Likuiditas instan untuk bayar pajak waris aset fisik
+            </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Quick Simulation Teaser -->
+<section class="w-full pb-20">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="rounded-3xl bg-surface-container p-8 lg:p-12 shadow-lg">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<div class="lg:col-span-7">
+<div class="flex items-center gap-2 text-primary font-label-md text-label-md font-semibold mb-2">
+<span class="material-symbols-outlined text-[20px]">calculate</span>
+              Estimasi Kebutuhan Proteksi Instan
+            </div>
+<h2 class="font-display text-headline-lg text-on-surface font-bold tracking-tight mb-4">
+              Berapa Nilai Proteksi Ideal yang Dibutuhkan Keluarga Anda?
+            </h2>
+<p class="font-body-md text-body-md text-secondary leading-relaxed mb-6">
+              Gunakan pedoman baku industri: Nilai Uang Pertanggungan Jiwa &amp; Sakit Kritis minimal setara 5 hingga 10 tahun pengeluaran keluarga ditambah total sisa kewajiban hutang berjalan.
+            </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="p-4 rounded-xl bg-surface-container-lowest">
+<label class="font-label-sm text-label-sm text-secondary uppercase font-semibold block mb-1">Pengeluaran Keluarga / Bulan</label>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold" id="calcExpenseDisplay">Rp 25.000.000</div>
+<input class="w-full mt-3 accent-primary cursor-pointer" id="expenseSlider" max="100" min="10" step="5" type="range" value="25"/>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-lowest">
+<label class="font-label-sm text-label-sm text-secondary uppercase font-semibold block mb-1">Rekomendasi Proteksi Jiwa/Kritis</label>
+<div class="font-headline-sm text-headline-sm text-primary font-bold" id="calcResultDisplay">Rp 3.000.000.000</div>
+<div class="font-label-sm text-label-sm text-secondary mt-1">Standar 10 Tahun Perlindungan Nafkah</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 flex flex-col justify-center">
+<div class="p-6 rounded-2xl bg-surface-container-lowest shadow-md">
+<div class="flex items-center gap-3 mb-4">
+<img alt="Denny Indra" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtvMykuzlnzByqYPTLttiYI_cbWuCBcg7qtXBjohpeKQ-WjuzEzeqbj5tHnidacyVSe2TR2UCoj-nDuPwf95u_XYwG98dvZGP710217m7cxcbDV8Vsf5QrN9cPOz0XdejsI9tLun_NFlxaZhCWKqF-nP-BxZ3tENsbA3tLRI_feeTCpvoJavEY0KpWudMm8QWUFpClkZ0X49hSy-5YZ7U4RWZXuTRTLPVYgms4arNZeUEzaK7MI9QeDQ"/>
+<div>
+<div class="font-headline-sm text-body-lg font-bold text-on-surface">Denny Indra, CFP®</div>
+<div class="font-label-sm text-label-sm text-primary">Senior Wealth Advisor • MDRT Member</div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mb-4 leading-relaxed">
+                "Setiap keluarga memiliki komposisi aset yang unik. Saya siap membantu Anda melakukan evaluasi polis lama (Policy Review) tanpa biaya untuk mencegah premi ganda atau polis lapse."
+              </p>
+<a class="w-full py-3 rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md font-semibold text-center transition-colors shadow-xs block" href="/konsultasi">
+                Jadwalkan Financial Review 1-on-1
+              </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- High-Conversion VIP Call to Action Banner -->
+<section class="w-full pb-20">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="rounded-3xl bg-inverse-surface text-inverse-on-surface p-10 lg:p-14 relative overflow-hidden shadow-xl">
+<!-- Subtle Glow Decors -->
+<div class="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-primary/20 blur-3xl pointer-events-none"></div>
+<div class="absolute -left-20 -bottom-20 w-80 h-80 rounded-full bg-tertiary-fixed/10 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-3xl">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-sm bg-surface-container-high/20 text-inverse-on-surface font-label-sm text-label-sm uppercase tracking-wider mb-4">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+            Kerahasiaan Data &amp; Portofolio Dijamin
+          </span>
+<h2 class="font-display text-headline-lg lg:text-display text-inverse-on-surface font-bold tracking-tight mb-4">
+            Siap Merancang Perlindungan Terbaik untuk Keluarga Anda?
+          </h2>
+<p class="font-body-lg text-body-lg text-secondary-fixed mb-8 leading-relaxed">
+            Dapatkan proposal ilustrasi resmi Prudential Life Assurance yang disesuaikan secara presisi dengan usia, profil risiko, anggaran, serta tujuan jangka panjang keluarga Anda.
+          </p>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+<a class="px-8 py-3.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-lg text-label-lg font-semibold transition-all shadow-md text-center flex items-center justify-center gap-2" href="/konsultasi">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+              Request Proposal Ilustrasi Polis
+            </a>
+<a class="px-6 py-3.5 rounded-lg bg-surface-container-lowest/10 hover:bg-surface-container-lowest/20 text-inverse-on-surface font-label-lg text-label-lg font-medium transition-all text-center flex items-center justify-center gap-2" href="https://wa.me/6287860000788" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px] text-green-400">chat</span>
+              WhatsApp Fast Track VIP
+            </a>
+</div>
+<div class="flex items-center gap-6 mt-8 pt-8 border-t border-secondary/30 flex-wrap">
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-secondary-fixed">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed">verified_user</span>
+              Terdaftar &amp; Diawasi Otoritas Jasa Keuangan (OJK)
+            </div>
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-secondary-fixed">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed">verified_user</span>
+              Lisensi Penuh AAJI (Asosiasi Asuransi Jiwa Indonesia)
+            </div>
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-secondary-fixed">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed">verified_user</span>
+              Premier Club &amp; MDRT Global Standard
+            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Inline Filtering & Calculator Logic -->
+
+<script is:inline>
+// Filter tabs behavior
+  const filterBtns = document.querySelectorAll('#productFilterButtons .filter-tab');
+  const productCards = document.querySelectorAll('#productCardContainer .product-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // update active button styles
+      filterBtns.forEach(b => {
+        b.classList.remove('bg-primary-container', 'text-on-primary', 'shadow-sm');
+        b.classList.add('bg-surface-container', 'text-secondary');
+      });
+      btn.classList.remove('bg-surface-container', 'text-secondary');
+      btn.classList.add('bg-primary-container', 'text-on-primary', 'shadow-sm');
+
+      const filterVal = btn.getAttribute('data-filter');
+
+      productCards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        if (filterVal === 'all' || cat === filterVal) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Dynamic Protection Calculator
+  const expenseSlider = document.getElementById('expenseSlider');
+  const calcExpenseDisplay = document.getElementById('calcExpenseDisplay');
+  const calcResultDisplay = document.getElementById('calcResultDisplay');
+
+  if (expenseSlider && calcExpenseDisplay && calcResultDisplay) {
+    expenseSlider.addEventListener('input', (e) => {
+      const val = parseInt(e.target.value);
+      const monthly = val * 1000000;
+      // Formula: 10 years of annual expense = monthly * 12 * 10
+      const recommendedCover = monthly * 120;
+      
+      calcExpenseDisplay.innerText = 'Rp ' + monthly.toLocaleString('id-ID');
+      calcResultDisplay.innerText = 'Rp ' + recommendedCover.toLocaleString('id-ID');
+    });
+  }
+</script>
+</Layout>

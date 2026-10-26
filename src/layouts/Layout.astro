@@ -1,0 +1,65 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+import { getLang, routes, ui, type RouteKey } from '../i18n';
+interface Props { title: string; description?: string; route?: RouteKey }
+const lang = getLang(Astro.url);
+const { title, description = ui[lang].defaultDesc, route } = Astro.props;
+---
+<!doctype html>
+<html lang={ui[lang].htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    {route && (
+      <>
+        <link rel="alternate" hreflang="id" href={routes[route].id} />
+        <link rel="alternate" hreflang="en" href={routes[route].en} />
+        <link rel="alternate" hreflang="x-default" href={routes[route].id} />
+      </>
+    )}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <!-- Tema default: terang. Pilihan pengunjung disimpan di localStorage. -->
+    <script is:inline>
+      try { if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark'); } catch (e) {}
+      // 'js' menyembunyikan hero sampai animasi siap; timer = pengaman bila skrip animasi gagal dimuat
+      document.documentElement.classList.add('js');
+      setTimeout(function () { document.documentElement.classList.add('anim-ready'); }, 3500);
+    </script>
+  </head>
+  <body class="bg-background text-on-surface antialiased">
+    <div id="scrollProgress" aria-hidden="true" class="fixed top-0 left-0 z-[80] h-0.5 w-full origin-left bg-primary-container pointer-events-none" style="transform: scaleX(0)"></div>
+    <Header route={route} />
+    <main class="w-full pt-20 bg-background min-h-screen">
+      <slot />
+    </main>
+    <Footer />
+    <script>
+      import '../scripts/animations.ts';
+    </script>
+    <script is:inline>
+      document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var dark = document.documentElement.classList.toggle('dark');
+          try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
+        });
+      });
+      var menuBtn = document.getElementById('menuBtn');
+      var mobileMenu = document.getElementById('mobileMenu');
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', function () {
+          var open = mobileMenu.classList.toggle('hidden') === false;
+          menuBtn.setAttribute('aria-expanded', String(open));
+          menuBtn.querySelector('span').textContent = open ? 'close' : 'menu';
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+---
+import { waLink } from '../config';
+import { getLang, routes, ui, type RouteKey } from '../i18n';
+interface Props { route?: RouteKey }
+const lang = getLang(Astro.url);
+const alt = lang === 'id' ? 'en' : 'id';
+const t = ui[lang];
+const { route } = Astro.props;
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const nav = [
+  { key: 'home', href: routes.home[lang], label: t.nav.home },
+  { key: 'solusi', href: routes.solusi[lang], label: t.nav.solusi },
+  { key: 'klaim', href: routes.klaim[lang], label: t.nav.klaim },
+  { key: 'konsultasi', href: routes.konsultasi[lang], label: t.nav.konsultasi },
+];
+const isActive = (key: string) => route === key;
+const altHref = route ? routes[route][alt] : routes.home[alt];
+---
+<header class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-sm border-b border-outline-variant/30">
+  <div class="h-20 max-w-screen-2xl mx-auto px-4 sm:px-6 xl:px-8 flex items-center justify-between gap-2 sm:gap-4">
+    <!-- Logo + nama -->
+    <a href={routes.home[lang]} class="flex items-center gap-2 sm:gap-3 shrink-0" aria-label={t.homeAria}>
+      <img src="/logo-light.png" alt={t.logoLight} width="48" height="49" class="h-10 w-10 sm:h-12 sm:w-12 object-contain dark:hidden" />
+      <img src="/logo-dark.png" alt={t.logoDark} width="48" height="49" class="hidden h-10 w-10 sm:h-12 sm:w-12 object-contain dark:block" />
+      <div class="flex flex-col">
+        <div class="flex items-center gap-2">
+          <span class="font-headline-sm text-headline-sm max-sm:text-base max-sm:leading-6 text-on-surface font-semibold tracking-tight whitespace-nowrap">Denny Indra</span>
+          <span class="hidden sm:inline-block px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase tracking-wider whitespace-nowrap">Premier MDRT</span>
+        </div>
+        <span class="font-label-sm text-label-sm max-sm:text-[10px] text-secondary mt-0.5 whitespace-nowrap">{t.partner}</span>
+      </div>
+    </a>
+
+    <!-- Navigasi (1 baris) -->
+    <nav class="hidden xl:flex items-center gap-6 whitespace-nowrap" aria-label={t.navAria}>
+      {nav.map((item) => (
+        <a
+          href={item.href}
+          aria-current={isActive(item.key) ? 'page' : undefined}
+          class:list={['font-label-lg text-label-lg whitespace-nowrap transition-colors', isActive(item.key) ? 'text-primary font-semibold' : 'text-on-surface-variant hover:text-on-surface']}
+        >{item.label}</a>
+      ))}
+    </nav>
+
+    <!-- Aksi -->
+    <div class="flex items-center gap-1 sm:gap-2 xl:gap-3 shrink-0">
+      <a href={altHref} hreflang={alt} lang={alt} aria-label={t.langSwitchLabel} title={t.langSwitchLabel} class="w-7 h-7 sm:w-8 sm:h-8 xl:w-9 xl:h-9 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-center font-label-sm text-label-sm max-sm:text-[10px] font-bold transition-colors">{t.langSwitchTo}</a>
+      <button type="button" data-theme-toggle aria-label={t.themeToggle} class="w-7 h-7 sm:w-8 sm:h-8 xl:w-9 xl:h-9 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-colors">
+        <span class="material-symbols-outlined text-base sm:text-lg xl:text-xl dark:hidden">dark_mode</span>
+        <span class="material-symbols-outlined text-base sm:text-lg xl:text-xl hidden dark:inline">light_mode</span>
+      </button>
+      <a href={waLink(t.waDefault)} target="_blank" rel="noopener" aria-label="WhatsApp" class="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 max-xl:gap-1 max-xl:px-2.5 max-xl:py-1.5 max-xl:text-[11px] max-xl:leading-4 max-sm:w-7 max-sm:h-7 max-sm:p-0 rounded-lg bg-[#128C7E] hover:bg-[#0f766b] text-white font-label-md text-label-md whitespace-nowrap transition-all shadow-xs">
+        <span class="material-symbols-outlined text-[15px] sm:text-sm xl:text-base">chat</span>
+        <span class="hidden sm:inline">{t.whatsapp}</span>
+      </a>
+      <a href={routes.konsultasi[lang]} class="hidden md:inline-flex items-center justify-center px-4 py-2 rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md whitespace-nowrap transition-all shadow-xs">{t.freeConsult}</a>
+      <div class="pl-1 border-l border-outline-variant/30 hidden 2xl:block">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtvMykuzlnzByqYPTLttiYI_cbWuCBcg7qtXBjohpeKQ-WjuzEzeqbj5tHnidacyVSe2TR2UCoj-nDuPwf95u_XYwG98dvZGP710217m7cxcbDV8Vsf5QrN9cPOz0XdejsI9tLun_NFlxaZhCWKqF-nP-BxZ3tENsbA3tLRI_feeTCpvoJavEY0KpWudMm8QWUFpClkZ0X49hSy-5YZ7U4RWZXuTRTLPVYgms4arNZeUEzaK7MI9QeDQ" alt="Denny Indra" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant/40" />
+      </div>
+      <button id="menuBtn" type="button" aria-label={t.menuOpen} aria-expanded="false" class="xl:hidden w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-center">
+        <span class="material-symbols-outlined text-base sm:text-lg">menu</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Menu mobile -->
+  <div id="mobileMenu" class="hidden xl:hidden border-t border-outline-variant/30 bg-surface-container-lowest">
+    <nav class="max-w-screen-2xl mx-auto px-4 sm:px-6 py-3 flex flex-col" aria-label={t.mobileNavAria}>
+      {nav.map((item) => (
+        <a href={item.href} class:list={['py-3 font-label-lg text-label-lg border-b border-outline-variant/20 last:border-0', isActive(item.key) ? 'text-primary font-semibold' : 'text-on-surface-variant']}>{item.label}</a>
+      ))}
+      <a href={routes.konsultasi[lang]} class="mt-3 md:hidden inline-flex items-center justify-center px-4 py-2.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md">{t.freeConsult}</a>
+    </nav>
+  </div>
+</header>

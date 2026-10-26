@@ -1,0 +1,531 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { SITE } from '../config';
+---
+<Layout route="home" title={'Denny Indra - Insurance Agent | Proteksi & Perencanaan Keuangan Keluarga'} description={'Denny Indra, agen asuransi profesional: proteksi kesehatan, penyakit kritis, dana pendidikan, dan perencanaan warisan keluarga.'}>
+<div class="flex flex-col w-full">
+<!-- Modal QR: berisi link ke halaman tambah kontak -->
+<div id="qrModal" class="fixed inset-0 z-[90] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-md" role="dialog" aria-modal="true" aria-labelledby="qrTitle" data-site-url={SITE.siteUrl}>
+<div id="qrModalContent" class="relative w-full max-w-sm bg-surface-container-lowest rounded-2xl shadow-2xl p-7 flex flex-col items-center text-center">
+<button id="closeQrModal" type="button" aria-label="Tutup" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-secondary hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-lg">close</span>
+</button>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm uppercase tracking-wider mb-3">
+<span class="material-symbols-outlined text-sm">qr_code_2</span><span>Scan QR</span>
+</div>
+<h3 id="qrTitle" class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1">Denny Indra</h3>
+<p class="font-body-sm text-body-sm text-secondary mb-5">Pindai QR ini dengan kamera ponsel untuk membuka halaman tambah kontak.</p>
+<div class="p-3 rounded-xl bg-white shadow-md">
+<img id="qrImage" alt="QR code halaman tambah kontak Denny Indra" width="224" height="224" class="w-56 h-56 block" />
+</div>
+<div class="w-full mt-5 px-3 py-2.5 rounded-lg bg-surface-container text-center">
+<span id="qrUrl" class="block font-body-sm text-body-sm text-on-surface truncate"></span>
+</div>
+<a id="qrOpenLink" href="/add-contact" class="w-full mt-3 inline-flex items-center justify-center gap-2 py-2.5 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-base">person_add</span><span>Buka halaman tambah kontak</span>
+</a>
+</div>
+</div>
+<!-- HERO SECTION: Executive Wealth Advisory Showcase -->
+<section data-hero class="relative w-full overflow-hidden bg-surface py-16 lg:py-24">
+<!-- Atmospheric subtle background glow -->
+<div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+<div class="absolute top-1/2 right-0 w-[500px] h-[500px] rounded-full bg-secondary-fixed/30 blur-3xl pointer-events-none"></div><div class="absolute inset-0 pointer-events-none overflow-hidden"><svg class="absolute -right-20 top-10 w-[640px] h-[640px] text-primary-container/[0.04]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 400 400"><circle cx="200" cy="200" r="180" stroke-dasharray="4 4"></circle><circle cx="200" cy="200" r="140"></circle><circle cx="200" cy="200" r="90" stroke-dasharray="2 4"></circle><line x1="20" y1="200" x2="380" y2="200" stroke-opacity="0.5"></line><line x1="200" y1="20" x2="200" y2="380" stroke-opacity="0.5"></line></svg><div class="absolute left-1/2 top-10 -translate-x-1/2 w-full max-w-7xl h-px bg-gradient-to-r from-transparent via-outline-variant/30 to-transparent"></div></div>
+<div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<!-- Left Column: Copy & Executive Credibility -->
+<div class="lg:col-span-7 flex flex-col items-start">
+<!-- Authority Micro-Badge -->
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-lowest shadow-xs mb-6">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-md text-label-md text-on-surface font-semibold tracking-wide">
+              Senior Wealth Advisor &amp; MDRT Qualifier
+            </span>
+<span class="text-secondary">•</span>
+<span class="font-label-md text-label-md text-primary font-semibold">Prudential Life Assurance</span>
+</div>
+<!-- Main Value Proposition Headline -->
+<h1 class="font-display text-display text-on-surface mb-6 leading-tight">
+            Perlindungan Finansial &amp; Masa Depan Terencana Bersama Denny Indra.
+          </h1>
+<p class="font-body-lg text-body-lg text-secondary mb-10 max-w-2xl leading-relaxed">
+            Membantu lebih dari 350+ keluarga &amp; eksekutif korporasi merancang proteksi kesehatan komprehensif tanpa limit tahunan, perlindungan penyakit kritis, serta kepastian warisan finansial (legacy planning) berstandar integritas tertinggi.
+          </p>
+<!-- Action Button Hub -->
+<div class="flex flex-wrap items-center gap-4 w-full sm:w-auto">
+<!-- VCF Download Button (Data URI trigger via JS) -->
+<div class="flex items-center gap-3 w-full sm:w-auto"><button class="inline-flex flex-1 sm:flex-none items-center justify-center gap-2 px-4 sm:px-6 py-3.5 rounded-sm bg-primary-container text-on-primary hover:bg-primary font-label-lg text-label-lg transition-all shadow-md group" id="downloadVcfHero">
+<span class="material-symbols-outlined text-lg group-hover:-translate-y-0.5 transition-transform">contact_page</span>
+<span class="">Simpan Kontak</span>
+</button>
+<button type="button" id="openQrBtn" class="inline-flex xl:hidden flex-1 sm:flex-none items-center justify-center gap-2 px-4 sm:px-5 py-3.5 rounded-sm bg-surface-container hover:bg-surface-container-high text-on-surface font-label-lg text-label-lg transition-all shadow-xs"><span class="material-symbols-outlined text-lg text-primary">qr_code_2</span><span>Scan QR</span></button><a class="hidden xl:inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-sm bg-surface-container hover:bg-surface-container-high text-on-surface font-label-lg text-label-lg transition-all shadow-xs" href="https://wa.me/6287860000788?text=Halo%20Pak%20Denny%20Indra,%20saya%20ingin%20berkonsultasi." target="_blank" rel="noopener"><span class="material-symbols-outlined text-lg text-primary">chat</span><span>Chat WhatsApp</span></a></div>
+<!-- WhatsApp Direct Scheduling -->
+<a class="inline-flex items-center gap-2 px-3 py-3.5 text-on-surface hover:text-primary font-label-lg text-label-lg transition-colors" href="https://wa.me/6287860000788?text=Halo%20Pak%20Denny%20Indra,%20saya%20ingin%20jadwalkan%20konsultasi%20perencanaan%20keuangan." target="_blank">
+<span class="">Jadwalkan Konsultasi</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+<!-- Quick Trust Metrics Strip -->
+<div class="mt-14 pt-8 w-full grid grid-cols-2 sm:grid-cols-4 gap-6 bg-surface-container-lowest/70 backdrop-blur-md p-6 rounded-xl shadow-xs">
+<div>
+<div class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight" data-countup>10+ Thn</div>
+<div class="font-body-sm text-body-sm text-secondary mt-0.5">Dedikasi Profesional</div>
+</div>
+<div>
+<div class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight" data-countup>350+</div>
+<div class="font-body-sm text-body-sm text-secondary mt-0.5">Keluarga &amp; Portofolio</div>
+</div>
+<div>
+<div class="font-headline-md text-headline-md font-bold text-primary-container tracking-tight" data-countup>Rp 45M+</div>
+<div class="font-body-sm text-body-sm text-secondary mt-0.5">Klaim Terbantu Sukses</div>
+</div>
+<div>
+<div class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">MDRT</div>
+<div class="font-body-sm text-body-sm text-secondary mt-0.5">Lisensi Resmi AAJI</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Corporate Portrait & Precision Recognition Accents -->
+<div class="lg:col-span-5 relative flex justify-center">
+<div class="relative w-full max-w-[460px]">
+<!-- Decorative Backing Frame Accent -->
+<div class="absolute -inset-2 bg-gradient-to-tr from-primary-container/20 to-secondary-fixed/40 rounded-2xl transform -rotate-1"></div>
+<!-- Main Portrait Card -->
+<div class="relative rounded-2xl overflow-hidden bg-surface-container-lowest shadow-xl">
+<img alt="Denny Indra - Senior Wealth Advisor Prudential Indonesia" class="w-full h-[520px] object-cover object-top" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtvMykuzlnzByqYPTLttiYI_cbWuCBcg7qtXBjohpeKQ-WjuzEzeqbj5tHnidacyVSe2TR2UCoj-nDuPwf95u_XYwG98dvZGP710217m7cxcbDV8Vsf5QrN9cPOz0XdejsI9tLun_NFlxaZhCWKqF-nP-BxZ3tENsbA3tLRI_feeTCpvoJavEY0KpWudMm8QWUFpClkZ0X49hSy-5YZ7U4RWZXuTRTLPVYgms4arNZeUEzaK7MI9QeDQ">
+<!-- Top Left Float: Premier Agent Badge -->
+<div data-float class="absolute top-4 left-4 backdrop-blur-md bg-surface-container-lowest/90 px-3.5 py-2 rounded-lg shadow-xs flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-container text-lg" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-bold uppercase tracking-wider">Premier Advisor</span>
+<span class="font-label-sm text-label-sm text-secondary">Star Club &amp; MDRT Member</span>
+</div>
+</div>
+<!-- Bottom Glassmorphic Overlay Badge: Claim Track Record -->
+<div class="absolute bottom-4 inset-x-4 backdrop-blur-xl bg-inverse-surface/85 text-inverse-on-surface p-4 rounded-xl flex items-center justify-between shadow-lg">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center shrink-0 text-on-primary">
+<span class="material-symbols-outlined text-xl">verified</span>
+</div>
+<div>
+<div class="font-label-lg text-label-lg font-semibold text-inverse-on-surface">100% Claim Assistance</div>
+<div class="font-body-sm text-body-sm text-inverse-on-surface/80">Pendampingan langsung saat rawat inap &amp; klaim darurat</div>
+</div>
+</div>
+<a class="shrink-0 p-2 rounded-lg bg-surface-container-lowest/10 hover:bg-surface-container-lowest/20 text-inverse-on-surface transition-colors" href="https://wa.me/6287860000788" target="_blank" rel="noopener" title="Chat WhatsApp Denny Indra" aria-label="Chat WhatsApp Denny Indra"><span class="material-symbols-outlined text-xl">chat</span></a>
+</div>
+</div>
+<!-- Floating Stamp: Regulated Authority -->
+<div data-float class="absolute -bottom-5 -left-4 bg-surface-container-lowest px-4 py-2.5 rounded-lg shadow-md flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">security</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Diawasi OJK &amp; Lisensi AAJI</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FITUR UTAMA: Solusi Portofolio Proteksi & Kekayaan Eksklusif -->
+<section class="w-full py-20 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<!-- Section Header -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-6">
+<div>
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase tracking-wider mb-3">
+            Portofolio Unggulan Prudential
+          </div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">
+            Solusi Finansial Dirancang Presisi untuk Anda
+          </h2>
+</div>
+<p class="font-body-md text-body-md text-secondary max-w-md">
+          Setiap instrumen dirancang selaras dengan tahapan kehidupan keluarga dan strategi diversifikasi aset terproteksi dari risiko tak terduga.
+        </p>
+</div>
+<!-- Solutions Bento / Grid Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Solution 1: VIP Healthcare -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-xs hover:shadow-md transition-all flex flex-col justify-between group">
+<div>
+<div class="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center text-primary mb-6 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl">local_hospital</span>
+</div>
+<div class="font-label-sm text-label-sm text-primary font-semibold uppercase tracking-wider mb-1">Rawat Inap Privat</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">
+              PRUPrime Healthcare Plus Pro
+            </h3>
+<p class="font-body-sm text-body-sm text-secondary mb-6 leading-relaxed">
+              Kenyamanan perawatan medis kamar 1 tempat tidur privat dengan kamar mandi dalam, klaim as-charged sesuai tagihan rumah sakit di seluruh dunia.
+            </p>
+<ul class="space-y-2 mb-6">
+<li class="flex items-start gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-base shrink-0 mt-0.5">check_circle</span>
+<span class="">Plafon proteksi s.d. Rp 65 Miliar / tahun</span>
+</li>
+<li class="flex items-start gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-base shrink-0 mt-0.5">check_circle</span>
+<span class="">Cover pra &amp; pasca rawat inap s.d 90 hari</span>
+</li>
+<li class="flex items-start gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-base shrink-0 mt-0.5">check_circle</span>
+<span class="">Fasilitas Cashless RS Rekanan Global</span>
+</li>
+</ul>
+</div>
+<a class="w-full py-2.5 rounded-sm bg-surface-container hover:bg-surface-container-high text-on-surface text-center font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" href="#form-konsultasi">
+<span class="">Pelajari Skema Polis</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Solution 2: Critical Illness Protection -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-xs hover:shadow-md transition-all flex flex-col justify-between group">
+<div>
+<div class="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed mb-6 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl">cardiology</span>
+</div>
+<div class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider mb-1">Income Replacement</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">
+              PRUCritical Benefit Network
+            </h3>
+<p class="font-body-sm text-body-sm text-secondary mb-6 leading-relaxed">
+              Pengganti penghasilan keluarga dalam bentuk santunan tunai cair seketika saat terdiagnosa penyakit kritis tahap awal hingga tahap akhir.
+            </p>
+<ul class="space-y-2 mb-6">
+<li class="flex items-start gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-base shrink-0 mt-0.5">check_circle</span>
+<span class="">Perlindungan multi-stage hingga 60+ kondisi</span>
+</li>
+<li class="flex items-start gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-base shrink-0 mt-0.5">check_circle</span>
+<span class="">Uang Pertanggungan cair tunai langsung ke rekening</span>
+</li>
+<li class="flex items-start gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-base shrink-0 mt-0.5">check_circle</span>
+<span class="">Pembebasan premi otomatis berkelanjutan</span>
+</li>
+</ul>
+</div>
+<a class="w-full py-2.5 rounded-sm bg-surface-container hover:bg-surface-container-high text-on-surface text-center font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" href="#form-konsultasi">
+<span class="">Pelajari Skema Polis</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Solution 3: Legacy & Estate Planning (Featured Accent) -->
+<div class="relative bg-surface-container-lowest rounded-xl p-6 shadow-md hover:shadow-xl transition-all flex flex-col justify-between group">
+<div class="absolute top-0 left-0 right-0 h-1 bg-primary-container rounded-t-xl"></div>
+<div>
+<div class="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center text-primary-container mb-6 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl">account_balance</span>
+</div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider">Perencanaan Waris</span>
+<span class="px-2 py-0.5 rounded-sm bg-primary-container text-on-primary font-label-sm text-[10px] uppercase">Rekomendasi</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">
+              PRUWarisan &amp; Legacy Estate
+            </h3>
+<p class="font-body-sm text-body-sm text-secondary mb-6 leading-relaxed">
+              Jaminan likuiditas tunai bebas sengketa waris dan bebas pajak untuk generasi penerus, bisnis keluarga, atau kepastian masa depan pasangan.
+            </p>
+<ul class="space-y-2 mb-6">
+<li class="flex items-start gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-base shrink-0 mt-0.5">check_circle</span>
+<span class="">Penerima manfaat tunjuk nama yang sah secara hukum</span>
+</li>
+<li class="flex items-start gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-base shrink-0 mt-0.5">check_circle</span>
+<span class="">Pilihan masa bayar fleksibel (5, 10, atau 15 tahun)</span>
+</li>
+<li class="flex items-start gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-base shrink-0 mt-0.5">check_circle</span>
+<span class="">Garansi uang pertanggungan tunai pasti cair</span>
+</li>
+</ul>
+</div>
+<a class="w-full py-2.5 rounded-sm bg-primary-container hover:bg-primary text-on-primary text-center font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5 shadow-xs" href="#form-konsultasi">
+<span class="">Pelajari Skema Polis</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Solution 4: Structured Higher Education -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-xs hover:shadow-md transition-all flex flex-col justify-between group">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-on-surface mb-6 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl">school</span>
+</div>
+<div class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider mb-1">Proteksi Pendidikan</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">
+              PRUSolusi Edukasi Mandiri
+            </h3>
+<p class="font-body-sm text-body-sm text-secondary mb-6 leading-relaxed">
+              Fondasi dana pendidikan perguruan tinggi buah hati dengan proteksi risiko orang tua sehingga target masa depan anak tetap terlaksana seutuhnya.
+            </p>
+<ul class="space-y-2 mb-6">
+<li class="flex items-start gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-base shrink-0 mt-0.5">check_circle</span>
+<span class="">Dana tahapan pasti masuk universitas</span>
+</li>
+<li class="flex items-start gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-base shrink-0 mt-0.5">check_circle</span>
+<span class="">Asuransi pembebasan premi bila pencari nafkah wafat/sakit</span>
+</li>
+<li class="flex items-start gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-base shrink-0 mt-0.5">check_circle</span>
+<span class="">Investasi berkala terkelola profesional</span>
+</li>
+</ul>
+</div>
+<a class="w-full py-2.5 rounded-sm bg-surface-container hover:bg-surface-container-high text-on-surface text-center font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" href="#form-konsultasi">
+<span class="">Pelajari Skema Polis</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- BUKTI KINERJA & KOMITMEN KLAIM: The Denny Indra Philosophy -->
+<section class="w-full py-20 bg-surface">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="bg-surface-container-lowest rounded-2xl p-8 lg:p-14 shadow-xs relative overflow-hidden"><div class="absolute -bottom-16 -right-16 w-80 h-80 pointer-events-none opacity-[0.04] text-primary"><svg viewBox="0 0 24 24" fill="currentColor" class="w-full h-full"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"></path></svg></div><div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-primary-container/40 to-transparent"></div>
+<!-- Accent Glow -->
+<div class="absolute top-0 right-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Text Core -->
+<div class="lg:col-span-6 flex flex-col">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-error-container text-on-error-container font-label-sm text-label-sm uppercase tracking-wider mb-4 w-fit">
+<span class="material-symbols-outlined text-sm">emergency</span>
+<span class="">Dedikasi Saat Krisis</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold leading-tight mb-4">
+              "Bukan Sekadar Menjual Polis, Saya Mendampingi Sepenuh Hati Saat Klaim Terjadi."
+            </h2>
+<p class="font-body-md text-body-md text-secondary leading-relaxed mb-6">
+              Nilai sejati dari seorang wealth planner teruji bukan saat penandatanganan aplikasi, melainkan ketika keluarga nasabah menghadapi situasi darurat rumah sakit. Komitmen saya adalah memastikan hak polis Anda cair optimal tanpa birokrasi berbelit.
+            </p>
+<!-- 3-Step Emergency Claim Flow -->
+<div class="space-y-4">
+<div class="flex items-start gap-4 p-3.5 rounded-lg bg-surface-container-low">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold font-headline-sm text-sm shrink-0">1</div>
+<div>
+<h4 class="font-headline-sm text-body-md font-semibold text-on-surface">Hotline VIP 24/7 &amp; Koordinasi RS</h4>
+<p class="font-body-sm text-body-sm text-secondary">Hubungi saya langsung begitu masuk IGD / rawat inap untuk aktivasi surat jaminan cashless Prudential.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-3.5 rounded-lg bg-surface-container-low">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold font-headline-sm text-sm shrink-0">2</div>
+<div>
+<h4 class="font-headline-sm text-body-md font-semibold text-on-surface">Asistensi Resume Medis &amp; Dokumen</h4>
+<p class="font-body-sm text-body-sm text-secondary">Saya membantu memastikan kelengkapan resume dokter dan berkas klaim agar selaras dengan kriteria medis.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-3.5 rounded-lg bg-surface-container-low">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-bold font-headline-sm text-sm shrink-0">3</div>
+<div>
+<h4 class="font-headline-sm text-body-md font-semibold text-on-surface">Penyelesaian Klaim &amp; Evaluasi Polis</h4>
+<p class="font-body-sm text-body-sm text-secondary">Pendampingan tuntas hingga penagihan RS selesai dan laporan manfaat tercatat transparan.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Claim Metric Visual & Testimonials -->
+<div class="lg:col-span-6 flex flex-col gap-6">
+<!-- Stat Box -->
+<div class="grid grid-cols-2 gap-4">
+<div class="p-6 rounded-xl bg-surface-container-low">
+<div class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Total Klaim Terbantu</div>
+<div class="font-display-mobile text-display-mobile font-bold text-primary mt-1" data-countup>Rp 45,8 M</div>
+<div class="font-body-sm text-body-sm text-secondary mt-1">Akumulasi klaim medis &amp; kritis yang tuntas terbantu</div>
+</div>
+<div class="p-6 rounded-xl bg-surface-container-low">
+<div class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Waktu Respons Darurat</div>
+<div class="font-display-mobile text-display-mobile font-bold text-on-surface mt-1" data-countup>&lt; 15 Mnt</div>
+<div class="font-body-sm text-body-sm text-secondary mt-1">Konfirmasi langsung ke tim penjaminan rekanan RS</div>
+</div>
+</div>
+<!-- Client Quotes Mosaic -->
+<div class="p-6 rounded-xl bg-surface-container-low flex flex-col gap-3">
+<div class="flex items-center gap-1 text-tertiary-container">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic">
+                "Saat operasi bypass jantung mendadak di Gleneagles Singapura, Pak Denny mengurus seluruh surat jaminan cashless hingga tagihan senilai 1,2 Miliar tertutup rapi tanpa kendala administrasi. Beliau adalah penasihat keuangan keluarga kami seumur hidup."
+              </p>
+<div class="flex items-center justify-between pt-2">
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Ir. Budi Santoso</div>
+<div class="font-label-sm text-label-sm text-secondary">Managing Director, Petrochemical Corporation</div>
+</div>
+<span class="px-2.5 py-1 rounded-sm bg-surface-container text-on-surface font-label-sm text-[11px]">Nasabah sejak 2017</span>
+</div>
+</div>
+<!-- Additional Micro Testimonial Row -->
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 rounded-xl bg-surface-container-low">
+<p class="font-body-sm text-body-sm text-secondary italic mb-2">"Struktur PRUWarisan yang dirancang Pak Denny membuat kami tenang akan masa depan ekspansi anak-anak."</p>
+<div class="font-label-sm text-label-sm font-semibold text-on-surface">dr. Stephanie W., Sp.A</div>
+<div class="font-label-sm text-label-sm text-secondary text-[11px]">Dokter Spesialis Anak - Jakarta</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low">
+<p class="font-body-sm text-body-sm text-secondary italic mb-2">"Profesional, tidak hard-selling, dan perhitungan cashflow proteksi sangat rasional dan transparan."</p>
+<div class="font-label-sm text-label-sm font-semibold text-on-surface">Hendrawan Tanaka</div>
+<div class="font-label-sm text-label-sm text-secondary text-[11px]">Owner Retail Network - Surabaya</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FORM KONSULTASI & PRIVATE ADVISORY BOOKING -->
+<section class="w-full py-20 bg-surface-container-low" id="form-konsultasi">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Contact & Credentials Context Left -->
+<div class="lg:col-span-5 flex flex-col">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm uppercase tracking-wider mb-4 w-fit">
+            Konsultasi Portofolio Privat
+          </div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold mb-4">
+            Mulai Diskusi Terbuka Mengenai Rencana Anda
+          </h2>
+<p class="font-body-md text-body-md text-secondary leading-relaxed mb-8">
+            Saya mengundang Anda untuk sesi audit polis atau perencanaan proteksi baru secara online via Zoom / tatap muka di kantor Prudential Centre Mall Kota Kasablanka.
+          </p>
+<div class="space-y-5">
+<div class="flex items-start gap-3.5">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-xl">location_on</span>
+</div>
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Lokasi Kantor Agensi</div>
+<div class="font-body-sm text-body-sm text-secondary">
+                  Prudential Centre @ Kota Kasablanka Mall, Lt. 15<br>
+                  Jl. Casablanca Raya Kav. 88, Tebet, Jakarta Selatan 12870
+                </div>
+</div>
+</div>
+<div class="flex items-start gap-3.5">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-xl">smartphone</span>
+</div>
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Direct Executive Contact</div>
+<div class="font-body-sm text-body-sm text-secondary">
+                  WhatsApp: +62 878-6000-0788<br>
+                  Email: dennytan788@gmail.com
+                </div>
+</div>
+</div>
+<div class="flex items-start gap-3.5">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-xl">verified_user</span>
+</div>
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Sertifikasi &amp; Lisensi</div>
+<div class="font-body-sm text-body-sm text-secondary">
+                  Lisensi Asuransi Jiwa AAJI No: 14098221<br>
+                  Certified Financial Planner (CFP®) Board Indonesia
+                </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Consultation Booking Form Card Right -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-8 lg:p-10 rounded-2xl shadow-xs border border-outline-variant/30">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-2">Formulir Permintaan Ilustrasi &amp; Diskusi</h3>
+<p class="font-body-sm text-body-sm text-secondary mb-8">Data Anda dijamin kerahasiaannya sesuai ketentuan undang-undang perlindungan data pribadi.</p>
+<form class="space-y-6" id="consultationForm">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="clientName">Nama Lengkap *</label>
+<input class="w-full h-11 px-3.5 rounded-sm bg-surface border border-outline-variant/50 focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 text-on-surface font-body-md text-body-md outline-hidden transition-all" id="clientName" placeholder="Contoh: Raymond Wijaya" required="" type="text">
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="clientPhone">Nomor WhatsApp Aktif *</label>
+<input class="w-full h-11 px-3.5 rounded-sm bg-surface border border-outline-variant/50 focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 text-on-surface font-body-md text-body-md outline-hidden transition-all" id="clientPhone" placeholder="+62 812 xxxx xxxx" required="" type="tel">
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="clientCity">Kota Domisili</label>
+<input class="w-full h-11 px-3.5 rounded-sm bg-surface border border-outline-variant/50 focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 text-on-surface font-body-md text-body-md outline-hidden transition-all" id="clientCity" placeholder="Jakarta / Surabaya / dll." type="text">
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="protectionGoal">Prioritas Rencana Keuangan</label>
+<select class="w-full h-11 px-3.5 rounded-sm bg-surface border border-outline-variant/50 focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 text-on-surface font-body-md text-body-md outline-hidden transition-all" id="protectionGoal">
+<option value="Kesehatan VIP (PRUPrime Pro)">Asuransi Kesehatan Kelas VIP Global</option>
+<option value="Sakit Kritis (PRUCritical)">Perlindungan Penyakit Kritis Multi-Stage</option>
+<option value="Warisan &amp; Legacy (PRUWarisan)">Perencanaan Waris Tunai (Legacy Planning)</option>
+<option value="Dana Pendidikan Anak">Persiapan Dana Pendidikan Anak</option>
+<option value="Audit Portofolio Polis Lama">Review Polis Polis Asuransi Berjalan</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="clientMessage">Catatan Tambahan atau Jumlah Tanggungan</label>
+<textarea class="w-full p-3.5 rounded-sm bg-surface border border-outline-variant/50 focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 text-on-surface font-body-md text-body-md outline-hidden transition-all" id="clientMessage" placeholder="Tuliskan estimasi usia anak, budget premi bulanan/tahunan yang dikehendaki..." rows="3"></textarea>
+</div>
+<div class="flex items-center gap-2">
+<input checked="" class="w-4 h-4 rounded-sm text-primary-container accent-primary-container" id="consentCheck" required="" type="checkbox">
+<label class="font-body-sm text-body-sm text-secondary" for="consentCheck">
+                Saya bersedia dihubungi via WhatsApp oleh Denny Indra untuk sesi penjelasan skema polis.
+              </label>
+</div>
+<button class="w-full h-12 rounded-sm bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg transition-all shadow-md flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined text-lg">send</span>
+<span class="">Kirim Permintaan Konsultasi</span>
+</button>
+</form>
+<div class="mt-4 p-4 rounded-lg bg-surface-container text-on-surface hidden" id="formSuccessAlert">
+<div class="flex items-center gap-2 text-primary font-semibold font-label-md text-label-md">
+<span class="material-symbols-outlined text-lg">check_circle</span>
+<span class="">Permintaan Anda Berhasil Terkirim!</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Denny Indra akan menghubungi Anda melalui nomor WhatsApp yang tertera dalam kurun waktu maks. 2 jam kerja.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive JavaScript Scripts -->
+
+</div>
+
+<script is:inline>
+(function () {
+  var WA = '6287860000788';
+  // Tombol "Simpan Kontak" mengunduh file vCard yang sama dengan halaman /add-contact
+  var dl = document.getElementById('downloadVcfHero');
+  if (dl) dl.addEventListener('click', function (e) {
+    e.preventDefault();
+    var a = document.createElement('a');
+    a.href = '/denny-indra.vcf'; a.download = 'Denny_Indra.vcf';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  });
+
+  // Formulir konsultasi -> dikirim lewat WhatsApp
+  var form = document.getElementById('consultationForm');
+  var ok = document.getElementById('formSuccessAlert');
+  if (form) form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var v = function (id) { return (document.getElementById(id).value || '').trim(); };
+    var msg = 'Halo Pak Denny Indra, saya ' + v('clientName') + ' (' + v('clientPhone') + ')'
+      + (v('clientCity') ? ' dari ' + v('clientCity') : '')
+      + ' ingin berkonsultasi terkait: ' + v('protectionGoal') + '.'
+      + (v('clientMessage') ? '\nCatatan: ' + v('clientMessage') : '')
+      + '\nMohon info jadwal diskusi.';
+    window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+    if (ok) ok.classList.remove('hidden');
+    form.reset();
+  });
+})();
+</script>
+
+<script>
+import '../scripts/qr.ts';
+</script>
+</Layout>

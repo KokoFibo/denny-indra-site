@@ -1,0 +1,495 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { SITE } from '../../config';
+---
+<Layout route="konsultasi" title={'Protection Simulation & Consultation Schedule | Denny Indra'} description={'Calculate the sum assured you need and schedule a private consultation with Denny Indra.'}>
+<div class="flex flex-col w-full">
+<!-- Top Executive Header Banner -->
+<section class="relative w-full bg-inverse-surface text-inverse-on-surface overflow-hidden py-16 lg:py-24">
+<div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none"></div>
+<div class="absolute -right-24 -bottom-24 w-96 h-96 rounded-full bg-primary-container/20 blur-3xl pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+<div class="max-w-3xl space-y-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-tertiary-container/30 text-tertiary-fixed text-label-sm font-label-sm tracking-wider uppercase backdrop-blur-md">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+            Private Wealth Advisory Suite
+          </div>
+<h1 class="font-display text-display leading-tight text-inverse-on-surface">
+            Protection Needs Calculator &amp; Portfolio Planning Session Booking
+          </h1>
+<p class="font-body-lg text-body-lg text-secondary-fixed max-w-2xl leading-relaxed">
+            Calculate your sum assured precisely, design a multi-generation inheritance fund, and schedule an exclusive face-to-face dialogue with Denny Indra, CFP® (Premier MDRT Prudential).
+          </p>
+</div>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 bg-surface-container-lowest/10 backdrop-blur-md p-4 rounded-xl">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined">shield_with_heart</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-inverse-on-surface leading-none">IDR 180M+</div>
+<div class="font-label-sm text-label-sm text-secondary-fixed mt-1">Total Policy Portfolio Managed</div>
+</div>
+</div>
+<div class="w-px h-10 bg-secondary-fixed/20 hidden sm:block"></div>
+<div class="flex items-center gap-2 text-tertiary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-base">military_tech</span>
+            Top 1% Financial Planner
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Dual Workspace: Calculator & Appointment Scheduler -->
+<section class="max-w-7xl mx-auto px-6 lg:px-12 -mt-8 relative z-20 w-full mb-20">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- LEFT: Wealth Protection Calculator -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl shadow-xl p-6 sm:p-10 space-y-8">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 gap-2">
+<div>
+<span class="font-label-sm text-label-sm text-primary tracking-widest uppercase font-semibold">360° Financial Simulation</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Protection &amp; Inheritance Needs Calculator</h2>
+</div>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-sm bg-surface-container text-secondary text-label-md font-label-md">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            Real-time Algorithm
+          </span>
+</div>
+<p class="font-body-md text-body-md text-secondary">
+          Set your family's basic parameters to measure income protection, medical inflation readiness, and dispute-free wealth transfer.
+        </p>
+<!-- Form Sliders and Selectors -->
+<div class="space-y-6">
+<!-- Monthly Expense -->
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="expenseSlider">
+                Regular Family Expenses / Month
+              </label>
+<span class="font-headline-sm text-headline-sm text-primary font-bold" id="expenseValDisplay">
+                Rp 35,000,000
+              </span>
+</div>
+<input class="w-full h-2 bg-surface-container rounded-lg appearance-none cursor-pointer accent-primary-container" id="expenseSlider" max="200000000" min="10000000" step="5000000" type="range" value="35000000"/>
+<div class="flex justify-between font-label-sm text-label-sm text-secondary">
+<span>Rp 10 Mn</span>
+<span>Rp 100 Mn</span>
+<span>Rp 200 Mn+</span>
+</div>
+</div>
+<!-- Dependent Children -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface font-semibold">
+              Number of Child Dependents &amp; Critical Age
+            </label>
+<div class="grid grid-cols-4 gap-3" id="childSelectionGroup">
+<button class="child-btn py-2.5 rounded-sm text-label-md font-label-md bg-surface-container text-secondary transition-all" data-val="0" type="button">0 Children</button>
+<button class="child-btn py-2.5 rounded-sm text-label-md font-label-md bg-surface-container text-secondary transition-all" data-val="1" type="button">1 Child</button>
+<button class="child-btn py-2.5 rounded-sm text-label-md font-label-md bg-primary-container text-on-primary shadow-xs" data-val="2" type="button">2 Children</button>
+<button class="child-btn py-2.5 rounded-sm text-label-md font-label-md bg-surface-container text-secondary transition-all" data-val="3" type="button">3+ Children</button>
+</div>
+</div>
+<!-- Legacy Goal -->
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="legacySlider">
+                Tax-Free Inheritance Fund Target (Estate Asset)
+              </label>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold" id="legacyValDisplay">
+                Rp 5,000,000,000
+              </span>
+</div>
+<input class="w-full h-2 bg-surface-container rounded-lg appearance-none cursor-pointer accent-primary-container" id="legacySlider" max="30000000000" min="1000000000" step="1000000000" type="range" value="5000000000"/>
+<div class="flex justify-between font-label-sm text-label-sm text-secondary">
+<span>Rp 1 Billion</span>
+<span>Rp 15 Billion</span>
+<span>Rp 30 Billion</span>
+</div>
+</div>
+</div>
+<!-- Dynamic Output Matrix Cards -->
+<div class="bg-surface-container-low rounded-xl p-6 space-y-6">
+<div class="flex items-center justify-between">
+<div class="font-label-lg text-label-lg text-on-surface font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">analytics</span>
+              Your Ideal Portfolio Recommendation
+            </div>
+<span class="text-label-sm font-label-sm text-secondary">Capital Need Analysis Formula 2025</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<!-- Metric 1: UP Jiwa -->
+<div class="bg-surface-container-lowest p-4 rounded-lg shadow-xs space-y-1">
+<div class="text-secondary font-label-sm text-label-sm">Life &amp; Critical Illness Sum Assured</div>
+<div class="font-headline-sm text-headline-sm text-primary font-bold" id="resultUP">
+                Rp 8.5 Billion
+              </div>
+<div class="text-secondary font-body-sm text-body-sm">
+                10-year income protection + cash inheritance.
+              </div>
+</div>
+<!-- Metric 2: Plafon Rawat Inap -->
+<div class="bg-surface-container-lowest p-4 rounded-lg shadow-xs space-y-1">
+<div class="text-secondary font-label-sm text-label-sm">Annual Medical Limit</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold" id="resultPlafon">
+                Rp 35 Billion
+              </div>
+<div class="text-secondary font-body-sm text-body-sm">
+                PRUPrime Healthcare Plus (On-Bill).
+              </div>
+</div>
+<!-- Metric 3: Estimasi Alokasi Bulanan -->
+<div class="bg-surface-container-lowest p-4 rounded-lg shadow-xs space-y-1">
+<div class="text-secondary font-label-sm text-label-sm">Healthy Premium Allocation</div>
+<div class="font-headline-sm text-headline-sm text-tertiary-container font-bold" id="resultPremi">
+                ~ Rp 3.5 Mn /mo
+              </div>
+<div class="text-secondary font-body-sm text-body-sm">
+                Ideal ratio of 8-10% of cash flow.
+              </div>
+</div>
+</div>
+<!-- Chart Visual (Mini Inline SVG Ratio Breakdown) -->
+<div class="bg-surface-container-lowest p-4 rounded-lg flex flex-col sm:flex-row items-center gap-4">
+<div class="w-24 h-24 shrink-0 relative flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<!-- Background circle -->
+<path class="text-surface-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="4"></path>
+<!-- Stroke 1 (Living Protection) -->
+<path class="text-primary-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" id="svgStrokeIncome" stroke="currentColor" stroke-dasharray="60, 100" stroke-width="4"></path>
+<!-- Stroke 2 (Legacy) -->
+<path class="text-tertiary-fixed-dim" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" id="svgStrokeLegacy" stroke="currentColor" stroke-dasharray="25, 100" stroke-dashoffset="-60" stroke-width="4"></path>
+</svg>
+<span class="absolute font-headline-sm text-headline-sm font-bold text-on-surface">100%</span>
+</div>
+<div class="space-y-1.5 w-full">
+<div class="text-label-md font-label-md text-on-surface font-semibold">Protection Solution Allocation Composition:</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-secondary">
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span> Income Replacement &amp; Medical</span>
+<span class="font-semibold text-on-surface">65%</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-secondary">
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim"></span> Pure Legacy Estate</span>
+<span class="font-semibold text-on-surface">35%</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 rounded-lg bg-surface text-secondary font-body-sm text-body-sm flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5">info</span>
+<span>
+            The figures are an indicative simulation based on the income replacement actuarial formula (Income Replacement Method). The final policy is formally issued following the medical underwriting results of Prudential Life Assurance.
+          </span>
+</div>
+</div>
+<!-- RIGHT: Interactive Private Booking Form -->
+<div class="lg:col-span-5 bg-surface-container-lowest rounded-xl shadow-xl p-6 sm:p-10 space-y-8">
+<div>
+<span class="font-label-sm text-label-sm text-primary tracking-widest uppercase font-semibold">Private Advisory Access</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Schedule a Private Consultation</h2>
+<p class="font-body-md text-body-md text-secondary mt-1">
+            A confidential 45-minute discussion with Denny Indra, no commitment.
+          </p>
+</div>
+<form class="space-y-6" id="consultationBookingForm" onsubmit="event.preventDefault(); window.handleBookingSubmit();">
+<!-- Mode Selection -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Choose Meeting Format</label>
+<div class="grid grid-cols-1 gap-2.5" id="meetingModes">
+<label class="flex items-center gap-3 p-3 rounded-lg bg-surface-container-low cursor-pointer transition-all hover:bg-surface-container">
+<input checked="" class="w-4 h-4 accent-primary" name="meetingMode" type="radio" value="office"/>
+<div class="flex-1">
+<div class="font-label-md text-label-md text-on-surface font-semibold">Prudential Tower &amp; Kota Kasablanka Mall, 15th Floor</div>
+<div class="font-body-sm text-body-sm text-secondary">Executive Lounge South Jakarta (Private Room)</div>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg bg-surface-container-low cursor-pointer transition-all hover:bg-surface-container">
+<input class="w-4 h-4 accent-primary" name="meetingMode" type="radio" value="zoom"/>
+<div class="flex-1">
+<div class="font-label-md text-label-md text-on-surface font-semibold">Private Video Call (Zoom HD)</div>
+<div class="font-body-sm text-body-sm text-secondary">End-to-end secure encryption, interactive screen presentation</div>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg bg-surface-container-low cursor-pointer transition-all hover:bg-surface-container">
+<input class="w-4 h-4 accent-primary" name="meetingMode" type="radio" value="coffee"/>
+<div class="flex-1">
+<div class="font-label-md text-label-md text-on-surface font-semibold">Coffee Meeting (Jakarta &amp; Surabaya)</div>
+<div class="font-body-sm text-body-sm text-secondary">A five-star hotel lounge or cafe of your choice</div>
+</div>
+</label>
+</div>
+</div>
+<!-- Date and Slot Picker -->
+<div class="space-y-3">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="bookingDateInput">Choose Date &amp; Time Session</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div>
+<input class="w-full px-3 py-2.5 rounded-sm bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-hidden focus:ring-2 focus:ring-primary/40" id="bookingDateInput" required="" type="date"/>
+</div>
+<div>
+<select class="w-full px-3 py-2.5 rounded-sm bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-hidden focus:ring-2 focus:ring-primary/40" id="bookingSlotSelect" required="">
+<option value="pagi">Morning (10:00 - 11:30 WIB)</option>
+<option selected="" value="siang">Afternoon (13:30 - 15:00 WIB)</option>
+<option value="sore">Late Afternoon (16:00 - 17:30 WIB)</option>
+<option value="malam">VIP Evening (19:30 - 21:00 WIB)</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Risk & Interest Questionnaire -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Main Topics You Want to Discuss</label>
+<div class="grid grid-cols-2 gap-2 text-label-md font-label-md">
+<label class="flex items-center gap-2 p-2.5 rounded-sm bg-surface-container-low cursor-pointer">
+<input checked="" class="w-4 h-4 rounded-sm accent-primary" name="focusTopic" type="checkbox" value="kesehatan"/>
+<span class="text-on-surface text-body-sm font-body-sm">International VIP Health</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded-sm bg-surface-container-low cursor-pointer">
+<input checked="" class="w-4 h-4 rounded-sm accent-primary" name="focusTopic" type="checkbox" value="warisan"/>
+<span class="text-on-surface text-body-sm font-body-sm">Inheritance Fund &amp; Paper Assets</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded-sm bg-surface-container-low cursor-pointer">
+<input class="w-4 h-4 rounded-sm accent-primary" name="focusTopic" type="checkbox" value="bisnis"/>
+<span class="text-on-surface text-body-sm font-body-sm">Corporate Keyman Protection</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded-sm bg-surface-container-low cursor-pointer">
+<input class="w-4 h-4 rounded-sm accent-primary" name="focusTopic" type="checkbox" value="edukasi"/>
+<span class="text-on-surface text-body-sm font-body-sm">Overseas Children's Education Fund</span>
+</label>
+</div>
+</div>
+<!-- Client Contact Details -->
+<div class="space-y-3">
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="clientNameInput">Full Name as on ID Card</label>
+<input class="w-full px-3 py-2 rounded-sm bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-hidden focus:ring-2 focus:ring-primary/40" id="clientNameInput" placeholder="Example: Hendra Widjaja, S.E." required="" type="text"/>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="clientWhatsappInput">Active WhatsApp No.</label>
+<input class="w-full px-3 py-2 rounded-sm bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-hidden focus:ring-2 focus:ring-primary/40" id="clientWhatsappInput" placeholder="0812xxxxxxxx" required="" type="tel"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="clientCityInput">City of Residence</label>
+<input class="w-full px-3 py-2 rounded-sm bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-hidden focus:ring-2 focus:ring-primary/40" id="clientCityInput" placeholder="Jakarta / Surabaya / Other" required="" type="text"/>
+</div>
+</div>
+</div>
+<!-- Submit Button -->
+<button class="w-full py-3.5 px-6 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg font-semibold flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition-all" type="submit">
+<span class="material-symbols-outlined text-xl">event_available</span>
+            Confirm Meeting Schedule Reservation
+          </button>
+</form>
+<div class="hidden p-4 rounded-lg bg-surface-container-highest text-on-surface space-y-2" id="bookingSuccessNotice">
+<div class="flex items-center gap-2 text-primary font-semibold font-label-lg text-label-lg">
+<span class="material-symbols-outlined">task_alt</span>
+            Reservation Request Sent!
+          </div>
+<p class="text-body-sm font-body-sm text-secondary">
+            Denny Indra's assistant team will contact you via official WhatsApp within 60 minutes to confirm the calendar link &amp; venue reservation.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Advisory Venue Highlight: Kota Kasablanka Office & Hospitality -->
+<section class="max-w-7xl mx-auto px-6 lg:px-12 w-full mb-20">
+<div class="bg-surface-container-low rounded-xl p-8 lg:p-12 overflow-hidden relative">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-6 space-y-6">
+<div class="inline-flex items-center gap-2 text-primary font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+<span class="material-symbols-outlined text-base">domain</span>
+            Meeting Suite &amp; Dedicated Facilities
+          </div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface leading-tight">
+            Comfort &amp; Confidentiality of Dialogue in the Heart of Jakarta's Business District
+          </h2>
+<p class="font-body-md text-body-md text-secondary leading-relaxed">
+            Face-to-face consultation sessions are held at the Private Advisory Suite, Prudential Agency Office, Kota Kasablanka Mall Tower, 15th Floor. Equipped with a soundproof room, policy presentation audio-visual, a barista coffee corner, and VIP parking access.
+          </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary p-2 bg-surface-container-lowest rounded-lg">security</span>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface">100% Confidential</div>
+<div class="font-body-sm text-body-sm text-secondary">Asset &amp; medical data protected by strict NDA.</div>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary p-2 bg-surface-container-lowest rounded-lg">local_cafe</span>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface">Executive Lounge</div>
+<div class="font-body-sm text-body-sm text-secondary">A relaxed professional atmosphere without distractions.</div>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-6 grid grid-cols-2 gap-4">
+<div class="space-y-4">
+<img class="w-full h-48 sm:h-56 object-cover rounded-xl shadow-md" data-alt="Modern executive meeting room in a high-rise tower in Jakarta with floor to ceiling windows, sleek dark wooden conference table, comfortable leather chairs, warm architectural lighting, and subtle Prudential crimson accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3Mf64tamX4nEIC1F_zfSXgBYAquvf1q4J4pymWKjrd09Oa8fYqJvLEFDGqqM5fAyq7p4KR3_3Fwvx8LGawRcsiozIRk7Jnb7zdEow-llvucHAPs7Linkxt4KJGEkqGB6j9POEqBBbGFMS5oRbS2THe9cOR7ipIUufq_TAHV-mGts4Bz2RrGshU0s4lDSNO1Kf5O6scwyC03AdvqnJ2cJg4jQH4TZ87ktmzkWE8hSh"/>
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-xs">
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">12+ Years</div>
+<div class="font-body-sm text-body-sm text-secondary">High-net-worth financial portfolio experience.</div>
+</div>
+</div>
+<div class="space-y-4 -mt-6">
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-xs">
+<div class="font-headline-sm text-headline-sm text-primary font-bold">100% Ratio</div>
+<div class="font-body-sm text-body-sm text-secondary">Medical &amp; critical claims resolved.</div>
+</div>
+<img class="w-full h-48 sm:h-56 object-cover rounded-xl shadow-md" data-alt="Professional private wealth advisor sitting in a high-end coffee lounge reviewing financial planning documents with a discreet client in Jakarta, warm ambient lighting, elegant business attire." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3ci3Jz1jwVTP_WZJW1BCX7zCy_lnH64eP_rYNFVDVQrsa3oO5DU90qXlazIbDvtdECoCQU2NAkF6Vavk-g7vcLTQ4ndC6DgTRWMRrKYtiPEJrNauQNbAoYbpfbo319Uuq5nan32tSJvzPy81I2t-p21DjMN5hErarAFCL6fouQ_mySflJDf3eLb7KITZIt0tQQG4uVjxgZe8YBO_fINH1GUIozl8eQAGzJv_qDAOA"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Legal, Regulatory & Privacy Commitment Banner -->
+<section class="max-w-7xl mx-auto px-6 lg:px-12 w-full mb-16">
+<div class="bg-surface-container-lowest rounded-xl p-6 lg:p-8 shadow-xs">
+<div class="flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-2xl">verified_user</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface">Data Confidentiality &amp; Official Legal Guarantee</div>
+<p class="font-body-sm text-body-sm text-secondary max-w-2xl mt-0.5">
+              All of the family's financial data is encrypted to banking standards. Denny Indra operates under PT Prudential Life Assurance, which is licensed &amp; supervised by the Financial Services Authority (OJK) and holds an active license from the Indonesian Life Insurance Association (AAJI Reg. No: 00921820).
+            </p>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<div class="px-3.5 py-2 rounded-sm bg-surface-container-low text-secondary font-label-sm text-label-sm tracking-wide">
+            OJK REGISTERED
+          </div>
+<div class="px-3.5 py-2 rounded-sm bg-surface-container-low text-secondary font-label-sm text-label-sm tracking-wide">
+            AAJI LICENSE
+          </div>
+<div class="px-3.5 py-2 rounded-sm bg-surface-container-low text-secondary font-label-sm text-label-sm tracking-wide">
+            ISO 27001 COMPLIANT
+          </div>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+<script is:inline>
+(function initAdvisoryCalculator() {
+    // DOM Elements
+    const expenseSlider = document.getElementById('expenseSlider');
+    const legacySlider = document.getElementById('legacySlider');
+    const expenseDisplay = document.getElementById('expenseValDisplay');
+    const legacyDisplay = document.getElementById('legacyValDisplay');
+    const resultUP = document.getElementById('resultUP');
+    const resultPlafon = document.getElementById('resultPlafon');
+    const resultPremi = document.getElementById('resultPremi');
+    const childButtons = document.querySelectorAll('.child-btn');
+
+    let currentChildren = 2;
+
+    function formatRupiah(num) {
+      return 'Rp ' + (num).toLocaleString('en-US');
+    }
+
+    function calculateValues() {
+      if (!expenseSlider || !legacySlider) return;
+      const expense = parseInt(expenseSlider.value, 10);
+      const legacyTarget = parseInt(legacySlider.value, 10);
+
+      // Display inputs
+      expenseDisplay.textContent = formatRupiah(expense);
+      if (legacyTarget >= 1000000000) {
+        const inBillion = (legacyTarget / 1000000000).toFixed(0);
+        legacyDisplay.textContent = 'Rp ' + inBillion + ' Billion';
+      } else {
+        legacyDisplay.textContent = formatRupiah(legacyTarget);
+      }
+
+      // Calculations:
+      // UP Jiwa = (Annual Expense * 10 years multiplier) + (Children Education Reserve * currentChildren) + Legacy
+      const annualExpense = expense * 12;
+      const incomeReplacementUP = annualExpense * (currentChildren > 1 ? 12 : 10);
+      const childReserve = currentChildren * 500000000;
+      const totalUP = incomeReplacementUP + childReserve + legacyTarget;
+
+      const upInBillion = (totalUP / 1000000000).toFixed(1);
+      resultUP.textContent = 'Rp ' + upInBillion + ' Billion';
+
+      // Hospitalization limit tier based on expense profile
+      if (expense >= 50000000) {
+        resultPlafon.textContent = 'Rp 65 Billion';
+      } else if (expense >= 25000000) {
+        resultPlafon.textContent = 'Rp 35 Billion';
+      } else {
+        resultPlafon.textContent = 'Rp 20 Billion';
+      }
+
+      // Monthly recommended allocation (approx 7% - 10% of monthly income/expense)
+      const approxPremiMin = Math.round((expense * 0.08) / 100000) * 100000;
+      resultPremi.textContent = '~ ' + formatRupiah(approxPremiMin) + ' /mo';
+    }
+
+    // Attach slider listeners
+    if (expenseSlider) {
+      expenseSlider.addEventListener('input', calculateValues);
+    }
+    if (legacySlider) {
+      legacySlider.addEventListener('input', calculateValues);
+    }
+
+    // Child button listeners
+    childButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        childButtons.forEach(b => {
+          b.classList.remove('bg-primary-container', 'text-on-primary', 'shadow-sm');
+          b.classList.add('bg-surface-container', 'text-secondary');
+        });
+        btn.classList.remove('bg-surface-container', 'text-secondary');
+        btn.classList.add('bg-primary-container', 'text-on-primary', 'shadow-sm');
+        currentChildren = parseInt(btn.getAttribute('data-val') || '0', 10);
+        calculateValues();
+      });
+    });
+
+    // Set default date picker to tomorrow
+    const dateInput = document.getElementById('bookingDateInput');
+    if (dateInput) {
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      dateInput.value = tomorrow.toISOString().split('T')[0];
+      dateInput.min = tomorrow.toISOString().split('T')[0];
+    }
+
+    // Initialize display calculation
+    calculateValues();
+
+        // Kirim reservasi lewat WhatsApp
+    window.handleBookingSubmit = function() {
+      var WA = '6287860000788';
+      var val = function (id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; };
+      var modeEl = document.querySelector('input[name="meetingMode"]:checked');
+      var modeLabel = { office: 'In person at the office', zoom: 'Video call (Zoom)', coffee: 'Coffee meeting' }[modeEl ? modeEl.value : ''] || '-';
+      var slotSel = document.getElementById('bookingSlotSelect');
+      var slot = slotSel ? slotSel.options[slotSel.selectedIndex].text : '-';
+      var topics = Array.prototype.map.call(document.querySelectorAll('input[name="focusTopic"]:checked'), function (i) {
+        return i.nextElementSibling ? i.nextElementSibling.textContent.trim() : '';
+      }).filter(Boolean).join(', ') || '-';
+      var msg = 'Hello Mr. Denny Indra, I would like to book a consultation.'
+        + '\nName: ' + val('clientNameInput')
+        + '\nWhatsApp: ' + val('clientWhatsappInput')
+        + '\nCity: ' + val('clientCityInput')
+        + '\nFormat: ' + modeLabel
+        + '\nDate: ' + val('bookingDateInput') + ', ' + slot
+        + '\nTopics: ' + topics;
+      window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+      var notice = document.getElementById('bookingSuccessNotice');
+      if (notice) {
+        notice.classList.remove('hidden');
+        notice.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    };
+  })();
+</script>
+</Layout>

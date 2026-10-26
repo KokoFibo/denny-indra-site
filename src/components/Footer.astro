@@ -1,0 +1,55 @@
+---
+import { SITE, waLink } from '../config';
+import { getLang, routes, ui } from '../i18n';
+const lang = getLang(Astro.url);
+const t = ui[lang];
+const f = t.footer;
+---
+<footer class="w-full bg-surface-container-low text-on-surface border-t border-outline-variant/30">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 pt-16 pb-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12">
+      <div class="lg:col-span-5 flex flex-col gap-4">
+        <div class="flex items-center gap-3">
+          <img src="/logo-light.png" alt={t.logoLight} width="56" height="57" class="h-14 w-14 object-contain dark:hidden" />
+          <img src="/logo-dark.png" alt={t.logoDark} width="56" height="57" class="hidden h-14 w-14 object-contain dark:block" />
+          <span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Denny Indra, CFP®</span>
+        </div>
+        <p class="font-body-md text-body-md text-secondary max-w-md">{f.desc}</p>
+        <div class="flex items-center gap-2.5 pt-2 flex-wrap">
+          <span class="px-2.5 py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">AAJI Licensed</span>
+          <span class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">MDRT Life Member</span>
+          <span class="px-2.5 py-1 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm">Premier Club</span>
+        </div>
+      </div>
+      <div class="lg:col-span-2 flex flex-col gap-3">
+        <div class="font-label-lg text-label-lg text-on-surface font-semibold tracking-wide uppercase">{f.quick}</div>
+        <div class="flex flex-col gap-2">
+          <a class="font-body-sm text-body-sm text-secondary hover:text-on-surface transition-colors" href={routes.home[lang]}>{f.l1}</a>
+          <a class="font-body-sm text-body-sm text-secondary hover:text-on-surface transition-colors" href={routes.solusi[lang]}>{f.l2}</a>
+          <a class="font-body-sm text-body-sm text-secondary hover:text-on-surface transition-colors" href={routes.klaim[lang]}>{f.l3}</a>
+          <a class="font-body-sm text-body-sm text-secondary hover:text-on-surface transition-colors" href={routes.konsultasi[lang]}>{f.l4}</a>
+        </div>
+      </div>
+      <div class="lg:col-span-3 flex flex-col gap-3">
+        <div class="font-label-lg text-label-lg text-on-surface font-semibold tracking-wide uppercase">{f.office}</div>
+        <p class="font-body-sm text-body-sm text-secondary leading-relaxed">{f.address1}<br />{f.address2}<br />{f.address3}</p>
+        <div class="mt-1 flex flex-col gap-1.5">
+          <div class="font-body-sm text-body-sm text-on-surface"><span class="text-secondary">WhatsApp:</span> <a href={waLink(t.waDefault)} target="_blank" rel="noopener" class="hover:text-primary transition-colors">{SITE.whatsappDisplay}</a></div>
+          <div class="font-body-sm text-body-sm text-on-surface"><span class="text-secondary">{f.email}</span> {SITE.email}</div>
+        </div>
+      </div>
+      <div class="lg:col-span-2 flex flex-col gap-3">
+        <div class="font-label-lg text-label-lg text-on-surface font-semibold tracking-wide uppercase">{f.legal}</div>
+        <p class="font-body-sm text-body-sm text-secondary leading-relaxed">{f.legalText}</p>
+      </div>
+    </div>
+    <div class="pt-8 mt-4 border-t border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="font-body-sm text-body-sm text-secondary">© {new Date().getFullYear()} Denny Indra - Insurance Agent. {f.copy}</div>
+      <div class="flex items-center gap-6">
+        <a class="font-label-md text-label-md text-secondary hover:text-on-surface transition-colors" href={routes.home[lang]}>{f.b1}</a>
+        <a class="font-label-md text-label-md text-secondary hover:text-on-surface transition-colors" href={routes.solusi[lang]}>{f.b2}</a>
+        <a class="font-label-md text-label-md text-secondary hover:text-on-surface transition-colors" href={routes.konsultasi[lang]}>{f.b3}</a>
+      </div>
+    </div>
+  </div>
+</footer>
