@@ -11,6 +11,5 @@ npm run build    # hasil build ada di folder dist/
 - Nomor WhatsApp, email, dan nama diatur di `src/config.ts` (+62 878-6000-0788).
 - Warna tema ada di `src/styles/global.css`.
 
-## Dua bahasa
-- Indonesia (default) di `/`, Inggris di `/en/`. Tombol **EN / ID** ada di header.
-- Teks header, footer, dan halaman tambah kontak ada di `src/i18n.ts`. Isi halaman Inggris diterjemahkan lewat generator; untuk mengubah teks di kedua bahasa, ubah di file halaman `src/pages/*.astro` (Indonesia) dan `src/pages/en/*.astro` (Inggris).
+## Kontras warna
+Token warna yang dipakai ganda (sebagai teks dan latar) dipetakan khusus untuk tema gelap di bagian bawah `src/styles/global.css`. Bila menambah komponen baru, periksa kontras di kedua tema (minimal 4.5:1 untuk teks, 3:1 untuk ikon).

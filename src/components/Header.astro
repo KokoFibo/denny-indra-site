@@ -1,5 +1,4 @@
 ---
-import { waLink } from '../config';
 import { getLang, routes, ui, type RouteKey } from '../i18n';
 interface Props { route?: RouteKey }
 const lang = getLang(Astro.url);
@@ -46,13 +45,10 @@ const altHref = route ? routes[route][alt] : routes.home[alt];
     <div class="flex items-center gap-1 sm:gap-2 xl:gap-3 shrink-0">
       <a href={altHref} hreflang={alt} lang={alt} aria-label={t.langSwitchLabel} title={t.langSwitchLabel} class="w-7 h-7 sm:w-8 sm:h-8 xl:w-9 xl:h-9 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-center font-label-sm text-label-sm max-sm:text-[10px] font-bold transition-colors">{t.langSwitchTo}</a>
       <button type="button" data-theme-toggle aria-label={t.themeToggle} class="w-7 h-7 sm:w-8 sm:h-8 xl:w-9 xl:h-9 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-colors">
-        <span class="material-symbols-outlined text-base sm:text-lg xl:text-xl dark:hidden">dark_mode</span>
-        <span class="material-symbols-outlined text-base sm:text-lg xl:text-xl hidden dark:inline">light_mode</span>
+        <!-- Tema terang: tampil ikon bulan (ke gelap). Tema gelap: tampil ikon matahari (ke terang). -->
+        <span class="flex dark:hidden"><span class="material-symbols-outlined text-base sm:text-lg xl:text-xl">dark_mode</span></span>
+        <span class="hidden dark:flex"><span class="material-symbols-outlined text-base sm:text-lg xl:text-xl">light_mode</span></span>
       </button>
-      <a href={waLink(t.waDefault)} target="_blank" rel="noopener" aria-label="WhatsApp" class="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 max-xl:gap-1 max-xl:px-2.5 max-xl:py-1.5 max-xl:text-[11px] max-xl:leading-4 max-sm:w-7 max-sm:h-7 max-sm:p-0 rounded-lg bg-[#128C7E] hover:bg-[#0f766b] text-white font-label-md text-label-md whitespace-nowrap transition-all shadow-xs">
-        <span class="material-symbols-outlined text-[15px] sm:text-sm xl:text-base">chat</span>
-        <span class="hidden sm:inline">{t.whatsapp}</span>
-      </a>
       <a href={routes.konsultasi[lang]} class="hidden md:inline-flex items-center justify-center px-4 py-2 rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md whitespace-nowrap transition-all shadow-xs">{t.freeConsult}</a>
       <div class="pl-1 border-l border-outline-variant/30 hidden 2xl:block">
         <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtvMykuzlnzByqYPTLttiYI_cbWuCBcg7qtXBjohpeKQ-WjuzEzeqbj5tHnidacyVSe2TR2UCoj-nDuPwf95u_XYwG98dvZGP710217m7cxcbDV8Vsf5QrN9cPOz0XdejsI9tLun_NFlxaZhCWKqF-nP-BxZ3tENsbA3tLRI_feeTCpvoJavEY0KpWudMm8QWUFpClkZ0X49hSy-5YZ7U4RWZXuTRTLPVYgms4arNZeUEzaK7MI9QeDQ" alt="Denny Indra" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant/40" />

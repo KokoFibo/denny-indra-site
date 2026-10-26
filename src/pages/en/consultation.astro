@@ -154,11 +154,11 @@ import { SITE } from '../../config';
 <div class="w-24 h-24 shrink-0 relative flex items-center justify-center">
 <svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
 <!-- Background circle -->
-<path class="text-surface-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="4"></path>
+<path class="text-outline-variant" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="4"></path>
 <!-- Stroke 1 (Living Protection) -->
 <path class="text-primary-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" id="svgStrokeIncome" stroke="currentColor" stroke-dasharray="60, 100" stroke-width="4"></path>
 <!-- Stroke 2 (Legacy) -->
-<path class="text-tertiary-fixed-dim" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" id="svgStrokeLegacy" stroke="currentColor" stroke-dasharray="25, 100" stroke-dashoffset="-60" stroke-width="4"></path>
+<path class="text-tertiary-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" id="svgStrokeLegacy" stroke="currentColor" stroke-dasharray="25, 100" stroke-dashoffset="-60" stroke-width="4"></path>
 </svg>
 <span class="absolute font-headline-sm text-headline-sm font-bold text-on-surface">100%</span>
 </div>
@@ -169,7 +169,7 @@ import { SITE } from '../../config';
 <span class="font-semibold text-on-surface">65%</span>
 </div>
 <div class="flex items-center justify-between text-body-sm font-body-sm text-secondary">
-<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim"></span> Pure Legacy Estate</span>
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-tertiary-container"></span> Pure Legacy Estate</span>
 <span class="font-semibold text-on-surface">35%</span>
 </div>
 </div>
@@ -349,7 +349,7 @@ import { SITE } from '../../config';
 <div class="bg-surface-container-lowest rounded-xl p-6 lg:p-8 shadow-xs">
 <div class="flex flex-col md:flex-row items-center justify-between gap-6">
 <div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary shrink-0">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary shrink-0 ring-1 ring-inset ring-outline-variant/50">
 <span class="material-symbols-outlined text-2xl">verified_user</span>
 </div>
 <div>

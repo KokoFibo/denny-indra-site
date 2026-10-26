@@ -239,7 +239,15 @@
   .text-headline-lg { font-size: 28px; line-height: 36px; }
 }
 
-.dark .hover\:bg-primary:hover { background-color: #ef4444; }
+.dark .hover\:bg-primary:hover { background-color: #b91c1c; }
+/* Token yang dipakai ganda (sebagai teks DAN latar) dipetakan khusus di tema gelap agar tetap kontras */
+.dark .bg-primary { background-color: #dc2626; }
+.dark .bg-on-surface { background-color: #172036; }
+.dark .text-surface-container-lowest { color: #f8fafc; }
+.dark .text-secondary-fixed { color: #cbd5e1; }
+.dark .text-secondary-fixed-dim { color: #94a3b8; }
+.dark .text-tertiary-fixed, .dark .text-tertiary-fixed-dim, .dark .text-on-tertiary-container { color: #fbbf24; }
+select option { background-color: var(--c-surface-container-lowest); color: var(--c-on-surface); }
 .dark ::selection { background: #dc2626; color: #fff; }
 
 .js:not(.anim-ready) main section:first-of-type { opacity: 0; }
